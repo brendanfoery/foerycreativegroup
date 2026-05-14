@@ -7,23 +7,24 @@
   <meta name="description" content="Foery Creative Group crafts sonic identities for the world's most ambitious brands. Sound is your brand's last unfair advantage.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:          #050505;
-      --surface:     #0d0d0d;
-      --surface-2:   #121212;
-      --border:      rgba(255, 255, 255, 0.07);
-      --border-med:  rgba(255, 255, 255, 0.12);
-      --text:        #f5f5f7;
-      --text-2:      #86868b;
-      --text-3:      #3a3a3c;
-      --accent:      #a259ff;
-      --accent-2:    #6e9fff;
-      --accent-dim:  rgba(162, 89, 255, 0.10);
-      --accent-glow: rgba(162, 89, 255, 0.30);
+      --bg:          #0D1B2A;
+      --surface:     #0b1826;
+      --surface-2:   #122030;
+      --border:      rgba(245, 245, 240, 0.07);
+      --border-med:  rgba(245, 245, 240, 0.14);
+      --text:        #F5F5F0;
+      --text-2:      rgba(245, 245, 240, 0.52);
+      --text-3:      rgba(245, 245, 240, 0.22);
+      --accent:      #FBC02D;
+      --accent-2:    #f5d580;
+      --accent-dim:  rgba(251, 192, 45, 0.10);
+      --accent-glow: rgba(251, 192, 45, 0.28);
+      --crimson:     #8C1C13;
       --r:           12px;
     }
 
@@ -42,10 +43,10 @@
 
     /* ─── TYPOGRAPHY ─── */
     .display {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.04;
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 0.96;
     }
 
     .eyebrow {
@@ -57,7 +58,7 @@
     }
 
     .gradient-text {
-      background: linear-gradient(130deg, #a259ff 0%, #7b9fff 100%);
+      background: linear-gradient(130deg, #FBC02D 0%, #f5d580 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -78,22 +79,35 @@
     }
 
     nav.scrolled {
-      background: rgba(5, 5, 5, 0.88);
+      background: rgba(13, 27, 42, 0.92);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border-color: var(--border);
     }
 
     .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 19px;
-      letter-spacing: -0.03em;
-      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
       text-decoration: none;
+      gap: 2px;
     }
 
-    .nav-logo span { color: var(--accent); }
+    .logo-wordmark {
+      font-family: 'Anton', sans-serif;
+      font-size: 20px;
+      letter-spacing: 0.06em;
+      color: #FBC02D;
+    }
+
+    .logo-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 7px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(245, 245, 240, 0.40);
+    }
 
     .nav-links {
       display: flex;
@@ -129,7 +143,7 @@
 
     .btn-primary {
       background: var(--accent);
-      color: #fff;
+      color: #0D1B2A;
       border: 1px solid transparent;
     }
 
@@ -246,11 +260,11 @@
     }
 
     .manifesto-text {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
       font-size: clamp(28px, 3.8vw, 52px);
-      letter-spacing: -0.03em;
-      line-height: 1.12;
+      letter-spacing: 0.01em;
+      line-height: 1.08;
     }
 
     .manifesto-text em {
@@ -276,11 +290,11 @@
     }
 
     .section-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
       font-size: clamp(36px, 4.5vw, 58px);
-      letter-spacing: -0.03em;
-      line-height: 1.05;
+      letter-spacing: 0.01em;
+      line-height: 1.0;
       margin-top: 10px;
     }
 
@@ -341,10 +355,10 @@
     }
 
     .work-client {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
       font-size: 30px;
-      letter-spacing: -0.02em;
+      letter-spacing: 0.02em;
       margin-bottom: 6px;
       line-height: 1.1;
       position: relative;
@@ -432,10 +446,10 @@
     }
 
     .services-headline {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
       font-size: clamp(30px, 3.2vw, 44px);
-      letter-spacing: -0.03em;
+      letter-spacing: 0.01em;
       line-height: 1.1;
       margin-top: 12px;
       margin-bottom: 24px;
@@ -469,10 +483,10 @@
     }
 
     .service-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
       font-size: 20px;
-      letter-spacing: -0.02em;
+      letter-spacing: 0.02em;
       margin-bottom: 10px;
     }
 
@@ -503,13 +517,13 @@
     .stat-item:hover { background: var(--surface); }
 
     .stat-num {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
       font-size: 56px;
-      letter-spacing: -0.04em;
+      letter-spacing: 0.01em;
       line-height: 1;
       margin-bottom: 10px;
-      background: linear-gradient(135deg, #a259ff, #7b9fff);
+      background: linear-gradient(135deg, #FBC02D, #f5d580);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -530,7 +544,7 @@
     }
 
     .quote-mark {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Anton', sans-serif;
       font-size: 120px;
       line-height: 0.6;
       color: var(--accent);
@@ -540,10 +554,10 @@
     }
 
     .quote-text {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
       font-size: clamp(24px, 3vw, 40px);
-      letter-spacing: -0.025em;
+      letter-spacing: 0.01em;
       line-height: 1.25;
       max-width: 22ch;
       margin: 0 auto 28px;
@@ -567,7 +581,7 @@
       transform: translate(-50%, -50%);
       width: 700px;
       height: 500px;
-      background: radial-gradient(ellipse, rgba(162,89,255,0.08) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(251,192,45,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -576,11 +590,11 @@
     .contact-inner { position: relative; z-index: 1; }
 
     .contact-headline {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
       font-size: clamp(52px, 8vw, 108px);
-      letter-spacing: -0.04em;
-      line-height: 0.97;
+      letter-spacing: 0.02em;
+      line-height: 0.94;
       margin: 24px 0 30px;
     }
 
@@ -600,10 +614,10 @@
     }
 
     .contact-email {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Anton', sans-serif;
       font-size: clamp(18px, 2.4vw, 30px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
+      font-weight: 400;
+      letter-spacing: 0.02em;
       color: var(--text);
       text-decoration: none;
       padding-bottom: 3px;
@@ -630,17 +644,28 @@
     }
 
     .footer-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 15px;
-      letter-spacing: -0.02em;
-      color: var(--text-2);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
       text-decoration: none;
+      line-height: 1;
+    }
+
+    .footer-logo .logo-wordmark {
+      font-family: 'Anton', sans-serif;
+      font-size: 16px;
+      letter-spacing: 0.06em;
+      color: rgba(245, 245, 240, 0.5);
       transition: color 0.2s;
     }
 
-    .footer-logo:hover { color: var(--text); }
-    .footer-logo span { color: var(--accent); }
+    .footer-logo:hover .logo-wordmark { color: #FBC02D; }
+
+    .footer-logo .logo-sub {
+      font-size: 6.5px;
+      letter-spacing: 0.20em;
+      color: rgba(245, 245, 240, 0.22);
+    }
 
     .footer-copy { font-size: 13px; color: var(--text-3); }
 
@@ -686,7 +711,10 @@
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav id="nav">
-  <a href="#" class="nav-logo">Foery<span>.</span></a>
+  <a href="#" class="nav-logo">
+    <span class="logo-wordmark">FOERY</span>
+    <span class="logo-sub">Creative Group LLC</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
     <li><a href="#services">Services</a></li>
@@ -921,7 +949,10 @@
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
-  <a href="#" class="footer-logo">Foery<span>.</span></a>
+  <a href="#" class="footer-logo">
+    <span class="logo-wordmark">FOERY</span>
+    <span class="logo-sub">Creative Group LLC</span>
+  </a>
   <p class="footer-copy">© 2025 Foery Creative Group. All rights reserved.</p>
 </footer>
 
@@ -957,10 +988,10 @@
   }
 
   const WAVES = [
-    { amp: 0.085, freq: 0.0028, speed: 1.1,  lw: 1.4, alpha: 0.45, color: '#a259ff' },
-    { amp: 0.055, freq: 0.0055, speed: 1.8,  lw: 1.0, alpha: 0.22, color: '#a259ff' },
-    { amp: 0.030, freq: 0.0110, speed: 3.0,  lw: 0.7, alpha: 0.12, color: '#7b9fff' },
-    { amp: 0.018, freq: 0.0200, speed: 4.5,  lw: 0.5, alpha: 0.07, color: '#ffffff' },
+    { amp: 0.085, freq: 0.0028, speed: 1.1,  lw: 1.6, alpha: 0.40, color: '#FBC02D' },
+    { amp: 0.055, freq: 0.0055, speed: 1.8,  lw: 1.1, alpha: 0.18, color: '#FBC02D' },
+    { amp: 0.030, freq: 0.0110, speed: 3.0,  lw: 0.8, alpha: 0.10, color: '#8C1C13' },
+    { amp: 0.018, freq: 0.0200, speed: 4.5,  lw: 0.5, alpha: 0.06, color: '#F5F5F0' },
   ];
 
   function draw() {
@@ -984,16 +1015,16 @@
 
     // Bottom glow bar
     const grd = ctx.createLinearGradient(0, H * 0.7, 0, H);
-    grd.addColorStop(0, 'rgba(162,89,255,0.0)');
-    grd.addColorStop(1, 'rgba(5,5,5,0.0)');
+    grd.addColorStop(0, 'rgba(251,192,45,0.0)');
+    grd.addColorStop(1, 'rgba(13,27,42,0.0)');
     ctx.fillStyle = grd;
     ctx.globalAlpha = 1;
     ctx.fillRect(0, H * 0.7, W, H * 0.3);
 
     // Top fade
     const topFade = ctx.createLinearGradient(0, 0, 0, H * 0.45);
-    topFade.addColorStop(0, 'rgba(5,5,5,1)');
-    topFade.addColorStop(1, 'rgba(5,5,5,0)');
+    topFade.addColorStop(0, 'rgba(13,27,42,1)');
+    topFade.addColorStop(1, 'rgba(13,27,42,0)');
     ctx.fillStyle = topFade;
     ctx.globalAlpha = 1;
     ctx.fillRect(0, 0, W, H * 0.45);
@@ -1034,8 +1065,8 @@
       ) * H * 0.9 + 2;
 
       const g = bCtx.createLinearGradient(0, H, 0, H - h);
-      g.addColorStop(0, 'rgba(162,89,255,0.9)');
-      g.addColorStop(1, 'rgba(123,159,255,0.0)');
+      g.addColorStop(0, 'rgba(251,192,45,0.85)');
+      g.addColorStop(1, 'rgba(251,192,45,0.0)');
       bCtx.fillStyle = g;
       bCtx.fillRect(x, H - h, barW, h);
     }
