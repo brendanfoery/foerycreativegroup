@@ -797,11 +797,125 @@
       text-transform: uppercase;
     }
 
+    /* ─── WATCH LINK ─── */
+    .watch-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 32px;
+      transition: opacity 0.2s;
+    }
+
+    .watch-link:hover { opacity: 0.7; }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 56px;
+    }
+
+    .about-name {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: clamp(40px, 5vw, 66px);
+      letter-spacing: 0.01em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .about-role {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 36px;
+    }
+
+    .about-bio {
+      font-size: 16px;
+      color: var(--text-2);
+      line-height: 1.82;
+      font-weight: 300;
+    }
+
+    .about-quote-block {
+      padding-left: 28px;
+      border-left: 2px solid var(--accent);
+    }
+
+    .about-quote {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: clamp(22px, 2.5vw, 32px);
+      letter-spacing: 0.01em;
+      line-height: 1.22;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .about-quote-sub {
+      font-size: 15px;
+      color: var(--text-2);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ─── SOCIAL LINKS ─── */
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-3);
+      text-decoration: none;
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .social-link:hover { color: var(--accent); }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-social .social-link { font-size: 12px; }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
       .manifesto-wrap { grid-template-columns: 1fr; gap: 32px; }
       .services-layout { grid-template-columns: 1fr; gap: 56px; }
       .services-sticky { position: static; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
     }
 
@@ -816,7 +930,8 @@
       .work-featured-body .work-client { font-size: 36px; }
       .work-featured-side { padding: 40px 32px; gap: 32px; }
       .featured-stat-num { font-size: 64px; }
-      footer { padding: 28px 24px; flex-direction: column; gap: 10px; text-align: center; }
+      footer { padding: 28px 24px; flex-direction: column; gap: 16px; text-align: center; }
+      .footer-right { flex-direction: column; gap: 12px; }
     }
 
     @media (max-width: 540px) {
@@ -835,7 +950,7 @@
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#proof">About</a></li>
+    <li><a href="#about">About</a></li>
   </ul>
   <a href="#contact" class="btn btn-primary">
     Start a Project
@@ -916,6 +1031,10 @@
             <span>Creative Direction</span>
             <span>Film-Inspired Score</span>
           </div>
+          <a href="https://www.youtube.com/watch?v=EceJBB0BuFk" target="_blank" rel="noopener" class="watch-link">
+            Watch the Campaign
+            <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
         </div>
 
         <!-- Stat + Proof -->
@@ -946,10 +1065,10 @@
 
       <div class="services-sticky">
         <h2 class="services-headline reveal d1">
-          End-to-end sonic strategy, built for impact.
+          Three disciplines. One outcome: a brand that can't be forgotten.
         </h2>
         <p class="services-body reveal d2">
-          We don't just make things sound good. We make sound do work — reinforcing brand values, deepening loyalty, and creating recognition that visual identity alone cannot achieve.
+          We don't make music for brands. We build sound into brand infrastructure — the kind that creates recall, shapes emotion, and compounds in value over time.
         </p>
       </div>
 
@@ -957,29 +1076,22 @@
         <div class="service-item reveal">
           <span class="service-num">01</span>
           <div>
-            <h3 class="service-title">Sonic Brand Strategy</h3>
-            <p class="service-desc">Competitive landscape analysis and sonic positioning to establish your brand's unique audio territory before a single note is composed.</p>
+            <h3 class="service-title">Sonic Branding &amp; Audio Identity</h3>
+            <p class="service-desc">The highest-value work we do. Sonic logos, brand themes, audio identity systems, UI and app sounds, sound palettes for campaigns — the full sonic infrastructure that moves a brand out of "music-for-hire" territory and into long-term brand equity. Once built, it compounds.</p>
           </div>
         </div>
         <div class="service-item reveal d1">
           <span class="service-num">02</span>
           <div>
-            <h3 class="service-title">Sonic Identity Design</h3>
-            <p class="service-desc">Logo sounds, brand anthems, and mnemonic creation — the core sonic assets that anchor your brand across every touchpoint.</p>
+            <h3 class="service-title">Cinematic Music for Brand Campaigns</h3>
+            <p class="service-desc">We make brands feel like cinema. Custom scores for commercials, product launches, brand films, trailers, and YouTube content — built with the emotional architecture of great film, delivered for the modern content ecosystem. This is what 1.2M people showed up for.</p>
           </div>
         </div>
         <div class="service-item reveal d2">
           <span class="service-num">03</span>
           <div>
-            <h3 class="service-title">Audio Experience Architecture</h3>
-            <p class="service-desc">UI sounds, notification tones, hold music, in-store audio, and event soundscapes — a consistent sonic world everywhere your brand lives.</p>
-          </div>
-        </div>
-        <div class="service-item reveal d3">
-          <span class="service-num">04</span>
-          <div>
-            <h3 class="service-title">Creative Direction</h3>
-            <p class="service-desc">Campaign and content sound direction, voice casting, and narrative audio — ensuring your brand speaks with one clear, compelling voice.</p>
+            <h3 class="service-title">Strategic Sound Direction &amp; Consulting</h3>
+            <p class="service-desc">For brands that already have content but haven't thought strategically about sound. Sonic audits, music direction for campaigns, emotional positioning through audio, and cohesive sound systems across every touchpoint. Sound shapes perception — most brands leave that on the table.</p>
           </div>
         </div>
       </div>
@@ -994,24 +1106,57 @@
 <section id="proof">
   <div class="section-inner">
     <p class="eyebrow reveal">By The Numbers</p>
-    <h2 class="section-title reveal d1" style="margin-bottom: 0;">The results speak<br>for themselves.</h2>
-    <div class="stats-grid">
+    <h2 class="section-title reveal d1" style="margin-bottom: 0;">The work speaks<br>for itself.</h2>
+    <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
       <div class="stat-item reveal">
-        <p class="stat-num">47+</p>
-        <p class="stat-label">Brands transformed through sonic identity</p>
+        <p class="stat-num">100+</p>
+        <p class="stat-label">Original tracks produced — zero stock music, ever</p>
       </div>
       <div class="stat-item reveal d1">
-        <p class="stat-num">3×</p>
-        <p class="stat-label">Average lift in brand recall with a sonic identity</p>
+        <p class="stat-num">1.2M+</p>
+        <p class="stat-label">Views on a single cinematic campaign</p>
       </div>
       <div class="stat-item reveal d2">
-        <p class="stat-num">12</p>
-        <p class="stat-label">Industries served across global markets</p>
+        <p class="stat-num">0</p>
+        <p class="stat-label">Generic compositions — every note written for your brand</p>
       </div>
-      <div class="stat-item reveal d3">
-        <p class="stat-num">100%</p>
-        <p class="stat-label">Client retention rate in year one</p>
+    </div>
+  </div>
+</section>
+
+<div class="grad-line"></div>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section id="about">
+  <div class="section-inner">
+    <p class="eyebrow reveal">The Founder</p>
+    <div class="about-grid">
+
+      <div>
+        <h2 class="about-name reveal d1">Brendan Foery</h2>
+        <p class="about-role reveal d2">Founder &amp; Creative Director, FCG</p>
+        <p class="about-bio reveal d3">
+          Brendan Foery is the founder of Foery Creative Group — a sonic branding and cinematic audio studio focused on helping brands create emotionally unforgettable experiences through sound. With a background in cinematic composition, music production, and creative direction, he specializes in building music that carries the emotional weight of film into modern brand storytelling. His work blends strategic brand thinking with high-impact sound design, helping companies move beyond generic music toward a distinct sonic identity.
+        </p>
+        <div class="social-links reveal d4">
+          <a href="https://www.instagram.com/brendanfoery" target="_blank" rel="noopener" class="social-link">
+            <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.linkedin.com/in/brendanfoery/" target="_blank" rel="noopener" class="social-link">
+            <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
       </div>
+
+      <div class="reveal d2">
+        <div class="about-quote-block">
+          <p class="about-quote">Sound is not decoration — it is one of the most powerful tools a brand has to shape memory, emotion, and perception.</p>
+          <p class="about-quote-sub">That belief drives everything we build. Every track, every sonic identity, every creative decision is made with one question in mind: will this make people <em>feel</em> something they won't forget?</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1030,9 +1175,19 @@
       We work with a select number of brands each year. If you're building something worth hearing — we want to be part of it.
     </p>
     <div class="reveal d3">
-      <a href="mailto:hello@foerycreative.com" class="contact-email">hello@foerycreative.com</a>
+      <a href="mailto:admin@foerycreative.com" class="contact-email">admin@foerycreative.com</a>
     </div>
-    <p class="contact-note reveal d4">Typically responds within 24 hours</p>
+    <div class="social-links reveal d4" style="justify-content: center; margin-top: 40px;">
+      <a href="https://www.instagram.com/brendanfoery" target="_blank" rel="noopener" class="social-link">
+        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/brendanfoery/" target="_blank" rel="noopener" class="social-link">
+        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+    <p class="contact-note reveal" style="transition-delay:0.5s; margin-top: 20px;">Typically responds within 24 hours</p>
   </div>
 </section>
 
@@ -1042,7 +1197,19 @@
     <span class="logo-wordmark">FOERY</span>
     <span class="logo-sub">Creative Group LLC</span>
   </a>
-  <p class="footer-copy">© 2025 Foery Creative Group. All rights reserved.</p>
+  <div class="footer-right">
+    <div class="footer-social">
+      <a href="https://www.instagram.com/brendanfoery" target="_blank" rel="noopener" class="social-link">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/brendanfoery/" target="_blank" rel="noopener" class="social-link">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+    <p class="footer-copy">© 2025 Foery Creative Group.</p>
+  </div>
 </footer>
 
 <script>
