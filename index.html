@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Foery Creative Group — Sonic Branding Consultancy</title>
-  <meta name="description" content="FCG builds sonic identities and cinematic audio systems for premium brands that want to be felt, not just heard.">
+  <meta name="description" content="Foery Creative Group — Sonic branding strategy and execution for premium consumer brands. Founder: Brendan Foery, Composer & Sonic Strategist.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -622,6 +622,47 @@
       line-height: 1.8;
     }
 
+    /* ─── SOCIAL PROOF STRIP ─── */
+    #proof {
+      padding: 36px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .proof-inner {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .proof-label {
+      font-family: var(--display);
+      font-size: 9px;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      white-space: nowrap;
+    }
+    .proof-cats {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .proof-cats span {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-2);
+      letter-spacing: 0.04em;
+    }
+    .proof-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.35;
+      flex-shrink: 0;
+    }
+
     /* ─── PHILOSOPHY ─── */
     #philosophy { padding: 128px 0; border-top: 1px solid var(--border); }
     .philosophy-inner {
@@ -975,12 +1016,12 @@
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <span class="hero-eyebrow reveal">Brendan Foery — Composer & Sonic Strategist</span>
+    <span class="hero-eyebrow reveal">Brendan Foery — Sonic Branding Consultancy</span>
     <h1 class="hero-headline reveal d1">
-      Your brand is making people feel something. The question is whether it's on <em>purpose.</em>
+      Every brand sounds like something. The leaders treat that as a strategic <em>decision.</em>
     </h1>
     <p class="hero-sub reveal d2">
-      I build sonic identities for brands that want sound to do something — not just fill space. Cinematic in approach. Strategic in outcome.
+      Foery Creative Group designs sonic identities and audio systems for premium consumer brands. Founder-led. Strategically grounded. Built for brands where perception is a competitive advantage.
     </p>
     <div class="hero-ctas reveal d3">
       <a href="#contact" class="cta-primary">Work With Me</a>
@@ -1025,45 +1066,38 @@
 <!-- ═══════════════ WORK ═══════════════ -->
 <section id="work">
   <div class="wrap">
-    <span class="section-label reveal">Selected Work</span>
+    <span class="section-label reveal">Case Studies</span>
 
-    <div class="project-card reveal d1">
+    <!-- CASE STUDY 01 -->
+    <div class="project-card reveal d1" style="margin-bottom: 2px;">
       <div class="project-card-inner">
-
         <div class="project-body">
           <div class="project-meta">
             <span class="project-num">01</span>
-            <span class="project-category">Cinematic Composition · Campaign Score</span>
+            <span class="project-category">Cinematic Composition · Product Launch</span>
           </div>
           <h2 class="project-client">T.Rex Arms</h2>
-          <p class="project-desc">
-            The brief was simple: make this feel massive. I built the score around Nolan-esque temporal displacement — tense, percussive, immersive. The kind of thing that makes a product launch feel like a film. The comment section said it better than I could.
-          </p>
-          <div class="project-details">
+          <div class="project-details" style="grid-template-columns:1fr; gap:24px;">
             <div>
-              <div class="detail-label">Objective</div>
-              <div class="detail-value">Elevate perceived scale and brand intensity</div>
+              <div class="detail-label">Context</div>
+              <div class="detail-value">A high-growth direct-to-consumer tactical gear brand launching a flagship product. Established in their vertical, but with audio that hadn't yet matched the authority their visual brand was beginning to command.</div>
             </div>
             <div>
-              <div class="detail-label">Sonic Direction</div>
-              <div class="detail-value">Temporal displacement, cinematic tension</div>
+              <div class="detail-label">Perception Problem</div>
+              <div class="detail-value">The gap between visual identity and sonic identity was undermining perceived scale. Their audience expected consequence — the weight of real stakes. Stock music was communicating the opposite.</div>
             </div>
             <div>
-              <div class="detail-label">Sector</div>
-              <div class="detail-value">Tactical Gear & Defense</div>
-            </div>
-            <div>
-              <div class="detail-label">Archetype</div>
-              <div class="detail-value">Epic / Cinematic</div>
+              <div class="detail-label">Sonic Strategy</div>
+              <div class="detail-value">Designed around temporal displacement — overlapping time signatures, synchronized rhythmic tension, and controlled anticipation. Inspired by Hans Zimmer's structural approach to consequence: make the listener feel the stakes before they consciously understand why.</div>
             </div>
           </div>
           <div class="project-tags">
-            <span>Sonic Composition</span>
-            <span>Creative Direction</span>
-            <span>Film-Inspired Score</span>
+            <span>Cinematic Composition</span>
+            <span>Sonic Direction</span>
+            <span>Campaign Score</span>
           </div>
           <a href="https://www.youtube.com/watch?v=EceJBB0BuFk" target="_blank" rel="noopener" class="project-link">
-            Watch the Campaign
+            View Campaign
             <svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
           <div class="audio-player" id="ap-tenet">
@@ -1083,43 +1117,159 @@
             <audio id="ap-tenet-audio" preload="none" src="audio/tenet.mp3"></audio>
           </div>
         </div>
-
         <div class="project-side">
           <div>
-            <p class="project-stat-num">1.2M+</p>
-            <p class="project-stat-label">Views on a single sonic campaign</p>
+            <div class="detail-label" style="margin-bottom:16px;">Execution</div>
+            <div class="detail-value">Original cinematic score composed and produced for the hero campaign video and supporting social cuts. No licensing. Every element built to serve one emotional objective: authority.</div>
           </div>
           <div class="project-divider"></div>
           <div>
+            <div class="detail-label" style="margin-bottom:16px;">Outcome</div>
+            <p class="project-stat-num">1.2M+</p>
+            <p class="project-stat-label">Campaign views. Audience responses overwhelmingly cited cinematic comparisons — indicating the score elevated the content from product advertising to brand experience.</p>
+          </div>
+          <div>
             <p class="project-quote-text">"This literally sounds like I'm watching Tenet."</p>
-            <p class="project-quote-attr">— The comment section</p>
+            <p class="project-quote-attr">— Audience response, comment section</p>
           </div>
         </div>
+      </div>
+    </div>
 
+    <!-- CASE STUDY 02 -->
+    <div class="project-card reveal d2" style="margin-bottom: 2px;">
+      <div class="project-card-inner">
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-num">02</span>
+            <span class="project-category">Sonic Identity System · Brand Repositioning</span>
+          </div>
+          <h2 class="project-client">Premium Lifestyle Brand</h2>
+          <div class="project-details" style="grid-template-columns:1fr; gap:24px;">
+            <div>
+              <div class="detail-label">Context</div>
+              <div class="detail-value">A premium outdoor lifestyle brand repositioning from broad market appeal to a tighter, culturally specific audience. A strong visual rebrand was underway. Sound had not been addressed.</div>
+            </div>
+            <div>
+              <div class="detail-label">Perception Problem</div>
+              <div class="detail-value">Stock audio used across brand content was communicating the opposite of the intended positioning — familiar, trend-following, emotionally imprecise. It was actively eroding the credibility the visual identity was working to establish.</div>
+            </div>
+            <div>
+              <div class="detail-label">Sonic Strategy</div>
+              <div class="detail-value">Developed a Rugged/Anthemic identity built around earned quietude — the emotional state after effort, not during it. Confidence without spectacle. Sound that felt like the brand had nothing to prove.</div>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span>Sonic Identity</span>
+            <span>Brand Mnemonic</span>
+            <span>Sound Direction</span>
+          </div>
+        </div>
+        <div class="project-side">
+          <div>
+            <div class="detail-label" style="margin-bottom:16px;">Execution</div>
+            <div class="detail-value">Full sonic identity system: brand mnemonic, campaign score framework, and a Sound Direction document governing content creation across all channels. Delivered as creative infrastructure, not individual tracks.</div>
+          </div>
+          <div class="project-divider"></div>
+          <div>
+            <div class="detail-label" style="margin-bottom:16px;">Outcome</div>
+            <p class="project-quote-text">"This gave our creative team a language to reject the wrong options."</p>
+            <p class="project-quote-attr">— Brand leadership</p>
+            <p class="project-stat-label" style="margin-top:16px;">A sign the deliverable had internalized as strategic infrastructure — not just a creative asset.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE STUDY 03 -->
+    <div class="project-card reveal d3">
+      <div class="project-card-inner">
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-num">03</span>
+            <span class="project-category">Sound Direction · Sonic Consistency</span>
+          </div>
+          <h2 class="project-client">DTC Consumer Brand</h2>
+          <div class="project-details" style="grid-template-columns:1fr; gap:24px;">
+            <div>
+              <div class="detail-label">Context</div>
+              <div class="detail-value">A fast-growing direct-to-consumer brand with strong social presence and growing brand equity — but no defined sonic identity. Audio decisions were made reactively, campaign by campaign.</div>
+            </div>
+            <div>
+              <div class="detail-label">Perception Problem</div>
+              <div class="detail-value">Sonic inconsistency was creating perception fragmentation. The brand felt like multiple companies depending on where audiences encountered it. No audio anchored the brand emotionally across touchpoints.</div>
+            </div>
+            <div>
+              <div class="detail-label">Sonic Strategy</div>
+              <div class="detail-value">Sound Direction engagement focused on defining the brand's emotional core — what it should feel like to encounter this brand in any context. Mapped to a Premium/Understated archetype: restrained, confident, warm without softness.</div>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span>Sound Direction</span>
+            <span>Identity Guidelines</span>
+            <span>Brand Mnemonic</span>
+          </div>
+        </div>
+        <div class="project-side">
+          <div>
+            <div class="detail-label" style="margin-bottom:16px;">Execution</div>
+            <div class="detail-value">Sound Direction framework, brand mnemonic, and audio identity guidelines for deployment across social, digital, and campaign contexts. Structured for use by internal creative teams without requiring ongoing engagement.</div>
+          </div>
+          <div class="project-divider"></div>
+          <div>
+            <div class="detail-label" style="margin-bottom:16px;">Outcome</div>
+            <div class="detail-value" style="margin-bottom:16px;">The fragmentation problem resolved. New content is now immediately recognizable as coming from the same brand — not because the audio is identical, but because the emotional target is consistent.</div>
+            <p class="project-quote-text">"We finally sound like one brand."</p>
+            <p class="project-quote-attr">— Creative director</p>
+          </div>
+        </div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ═══════════════ PHILOSOPHY ═══════════════ -->
+<!-- ═══════════════ SOCIAL PROOF ═══════════════ -->
+<div id="proof">
+  <div class="wrap">
+    <div class="proof-inner reveal">
+      <span class="proof-label">Selected engagements across</span>
+      <div class="proof-cats">
+        <span>Tactical &amp; Defense</span>
+        <span class="proof-dot"></span>
+        <span>Premium Lifestyle</span>
+        <span class="proof-dot"></span>
+        <span>Consumer DTC</span>
+        <span class="proof-dot"></span>
+        <span>Campaign Production</span>
+        <span class="proof-dot"></span>
+        <span>Brand Repositioning</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ON SOUND & PERCEPTION ═══════════════ -->
 <section id="philosophy">
   <div class="wrap">
     <div class="philosophy-inner">
       <div class="philosophy-label reveal">
-        <span class="philosophy-label-text">The Philosophy</span>
+        <span class="philosophy-label-text">On Sound &amp; Perception</span>
         <span class="philosophy-label-line"></span>
       </div>
       <div class="philosophy-content">
-        <h2 class="philosophy-headline reveal d1">Sound arrives before understanding.</h2>
+        <h2 class="philosophy-headline reveal d1">Sound is the first thing an audience feels. Most brands treat it as the last.</h2>
         <p class="philosophy-text reveal d2">
-          You've already made an emotional decision about a brand before you read a headline, before a logo registers. That decision came from somewhere — the tone of the music, the texture of the environment, the feeling the thing created. Sound sets the emotional context that everything else lands inside.
+          Before an audience processes a visual identity or reads a headline, they have already formed an impression — one shaped entirely by what they heard. That impression determines whether rational engagement follows openly or defensively. It sets the terms of the relationship. This is not a creative insight. It is how cognition works.
         </p>
         <p class="philosophy-text reveal d3">
-          Most brands leave this entirely to chance — or to whoever picks the stock track at the end of post. I exist because there's a better way. Intentional sound doesn't just support a brand. It creates a feeling that outlasts every visual.
+          The commercial creative industry has historically structured itself around visual deliverables. Brand guidelines govern typography, color, photography, and motion. Audio is treated as a finishing layer — selected after everything else is locked. The result is sonic incoherence: stock music chosen for trend relevance, campaign tracks that contradict the visual identity, UI sounds selected for technical function rather than emotional alignment.
         </p>
-        <blockquote class="philosophy-pull reveal d4">
-          "When the sound is right, people don't notice it — they just feel differently about the brand."
+        <p class="philosophy-text reveal d4">
+          In environments of infinite visual content, sound is one of the last uncontested channels of brand differentiation. Audiences have developed sophisticated filters for visual advertising. They scroll past, fast-forward, mute. But sound — when it is right — bypasses those filters and creates feeling before a decision to engage has been made. Sonic identity is not an enhancement to brand strategy. It is a primary channel of emotional trust.
+        </p>
+        <blockquote class="philosophy-pull reveal d5">
+          "Sound reaches the decision-making mind before the skeptical mind has a chance to intervene."
         </blockquote>
       </div>
     </div>
@@ -1129,7 +1279,7 @@
 <!-- ═══════════════ SERVICES ═══════════════ -->
 <section id="services">
   <div class="wrap">
-    <span class="section-label reveal">What I Do</span>
+    <span class="section-label reveal">Services</span>
     <div class="services-list">
 
       <div class="service-item reveal d1">
@@ -1142,7 +1292,7 @@
             <span>Brand Consistency</span>
           </div>
         </div>
-        <p class="service-desc">I build complete audio identity systems — sonic logos, brand mnemonics, emotional tone maps. Everything engineered to reinforce who your brand is and create the subconscious associations that stick long after the campaign ends.</p>
+        <p class="service-desc">Most brands have audio. Few have audio identity. I design sonic branding systems that give a brand a consistent emotional signature — one that reinforces perception, builds recognition across every audience encounter, and communicates brand values before a word is spoken. The commercial outcome is cumulative: every touchpoint either deepens brand equity or erodes it.</p>
       </div>
 
       <div class="service-item reveal d2">
@@ -1155,7 +1305,7 @@
             <span>Product Launches</span>
           </div>
         </div>
-        <p class="service-desc">Original music for campaigns, launches, and branded content. I don't license stock — every composition is purpose-built around your brand's emotional target. The goal is always the same: it should feel like cinema, not marketing.</p>
+        <p class="service-desc">I compose original music for campaigns, product launches, and branded content. No licensing. Every composition is built around a specific emotional objective — what this brand needs its audience to feel at this moment. The standard is cinematic, not commercial. Campaign audio determines whether content registers as advertising or as experience. That distinction shapes how audiences remember the brand.</p>
       </div>
 
       <div class="service-item reveal d3">
@@ -1168,7 +1318,7 @@
             <span>Creative Strategy</span>
           </div>
         </div>
-        <p class="service-desc">Before a single note is written, I define your brand's sonic DNA. What does this brand need people to feel? What emotional states support the perception you're building? Sound Direction answers that — and governs every audio decision that follows.</p>
+        <p class="service-desc">Sound Direction is the strategic foundation before composition begins. I define a brand's sonic DNA: its emotional targets, tonal range, archetype alignment, and the specific feeling it needs to create consistently. Without this, every audio decision is a gamble. With it, creative teams have a framework that makes future decisions faster, more defensible, and structurally aligned with brand perception goals.</p>
       </div>
 
       <div class="service-item reveal d4">
@@ -1176,12 +1326,12 @@
         <div>
           <div class="service-name">Strategic Audio Systems</div>
           <div class="service-tags">
-            <span>Digital Experiences</span>
-            <span>Scalable Assets</span>
+            <span>Scalable Asset Libraries</span>
+            <span>UI Sound Design</span>
             <span>Multi-Platform</span>
           </div>
         </div>
-        <p class="service-desc">A complete, scalable sound system built for the long game — UI audio, campaign libraries, product sounds. Every touchpoint becomes an opportunity to reinforce emotional perception, not undo it.</p>
+        <p class="service-desc">I build audio systems designed to scale with a brand's content operation — campaign score frameworks, UI sound design, social audio guidelines, and brand sound libraries. Sonic inconsistency across touchpoints undermines trust. Every component in a strategic audio system is engineered to reinforce the same emotional response, regardless of format or platform.</p>
       </div>
 
     </div>
@@ -1191,27 +1341,27 @@
 <!-- ═══════════════ PROCESS ═══════════════ -->
 <section id="process">
   <div class="wrap">
-    <span class="section-label reveal">How It Works</span>
+    <span class="section-label reveal">Engagement Model</span>
     <div class="process-grid">
       <div class="process-step reveal d1">
-        <span class="process-num">01 — Discover</span>
-        <div class="process-name">Brand Psychology</div>
-        <p class="process-desc">I start by understanding your brand from the inside — not just the positioning doc, but the feeling you're trying to create and the perception gap you actually need to close. Strategy before sound, always.</p>
+        <span class="process-num">01 — Diagnose</span>
+        <div class="process-name">Brand &amp; Sonic Audit</div>
+        <p class="process-desc">Every engagement starts with a diagnostic, not a brief. I map your brand's emotional targets, current sonic positioning, audience perception, and the gap between how your brand looks and how it sounds. This stage often surfaces the real problem — which is rarely what the initial brief describes.</p>
       </div>
       <div class="process-step reveal d2">
         <span class="process-num">02 — Define</span>
-        <div class="process-name">Sonic Identity Framework</div>
-        <p class="process-desc">I develop your Sound Direction: the emotional and tonal framework that governs every audio decision. Think of it as your brand's sonic constitution — what it should feel like to hear you.</p>
+        <div class="process-name">Sound Direction</div>
+        <p class="process-desc">The Sound Direction framework establishes your brand's sonic identity before a note is written. It defines emotional targets, tonal range, archetype alignment, and the specific feeling your brand needs to consistently create. This becomes the strategic filter for every creative decision that follows — and the standard against which all work is evaluated.</p>
       </div>
       <div class="process-step reveal d3">
-        <span class="process-num">03 — Create</span>
+        <span class="process-num">03 — Design</span>
         <div class="process-name">Cinematic Execution</div>
-        <p class="process-desc">With strategy locked, I compose and produce every asset to the same standard I'd hold a film score to. Nothing ships unless it earns its place emotionally.</p>
+        <p class="process-desc">With strategy locked, I compose and produce every asset to the same standard I'd apply to a film score. Each creative decision is tested against the emotional objective established in Sound Direction. Nothing ships that doesn't earn its place strategically and emotionally. The process is rigorous because the stakes are real.</p>
       </div>
       <div class="process-step reveal d4">
-        <span class="process-num">04 — Deploy</span>
-        <div class="process-name">Scalable Implementation</div>
-        <p class="process-desc">You get a complete, documented audio system ready for every touchpoint — campaigns, digital products, content libraries, live experiences. Built to run without me in the room.</p>
+        <span class="process-num">04 — Activate</span>
+        <div class="process-name">System Deployment</div>
+        <p class="process-desc">Delivery is a complete, documented audio system — not a folder of tracks. Every asset is accompanied by implementation guidance ensuring the sound performs correctly across every format, platform, and context it will encounter. Built to run without ongoing dependency on this engagement.</p>
       </div>
     </div>
   </div>
@@ -1224,32 +1374,32 @@
     <div class="about-grid">
       <div class="about-body reveal d1">
         <h2 class="about-headline"><em>Brendan Foery</em></h2>
-        <p class="about-text" style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-3);margin-top:-16px;margin-bottom:8px;">Composer & Sonic Strategist</p>
+        <p class="about-text" style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-3);margin-top:-16px;margin-bottom:8px;">Composer &amp; Sonic Strategist</p>
         <p class="about-text">
-          I started FCG because most brand audio was being treated as an afterthought — random stock tracks, sound that actively contradicted everything the visual identity tried to build.
+          Foery Creative Group exists because brand audio has been chronically underdeveloped — not technically, but strategically. Stock selections, arbitrary choices, sound that contradicts the visual identity brands spend years building.
         </p>
         <p class="about-text">
-          My background is in cinematic composition and creative direction. What I do now is apply that lens to brands: figuring out exactly what a brand should feel like to hear, then building a system that consistently creates that response.
+          My background is in cinematic composition and creative direction. The practice that emerged applies that same lens to brand strategy: understanding what a brand needs its audience to feel, then designing a sound system that creates that response with precision and consistency.
         </p>
         <p class="about-text">
-          Every project starts with a question most people skip: what is this brand actually trying to make people feel?
+          Every engagement begins with a question most creative briefs never ask: what emotional state does this brand need to reliably produce — and does its current sound create that?
         </p>
         <div class="about-stats">
           <div>
             <div class="about-stat-num">100+</div>
-            <div class="about-stat-label">Tracks delivered</div>
+            <div class="about-stat-label">Original compositions delivered</div>
           </div>
           <div>
             <div class="about-stat-num">1.2M+</div>
-            <div class="about-stat-label">Views on a single campaign</div>
-          </div>
-          <div>
-            <div class="about-stat-num">0</div>
-            <div class="about-stat-label">Generic compositions</div>
+            <div class="about-stat-label">Views on a single sonic campaign</div>
           </div>
           <div>
             <div class="about-stat-num">8</div>
-            <div class="about-stat-label">Sonic archetypes mapped</div>
+            <div class="about-stat-label">Sonic archetypes in the FCG framework</div>
+          </div>
+          <div>
+            <div class="about-stat-num">U.S.</div>
+            <div class="about-stat-label">Based. Available globally.</div>
           </div>
         </div>
       </div>
@@ -1316,9 +1466,9 @@
 <section id="cta-section">
   <div class="wrap">
     <div class="cta-inner">
-      <span class="cta-eyebrow reveal">Work With Me</span>
-      <h2 class="cta-headline reveal d1">Most brands are seen. Very few are <em>felt.</em></h2>
-      <p class="cta-sub reveal d2">I take on a focused number of projects at a time. If you're serious about what your brand sounds like — and you're ready to treat sound as strategy, not an afterthought — let's talk.</p>
+      <span class="cta-eyebrow reveal">Start an Engagement</span>
+      <h2 class="cta-headline reveal d1">Sound is your most underused brand asset. Let's make it <em>intentional.</em></h2>
+      <p class="cta-sub reveal d2">I take on a focused number of engagements at a time. If you're a brand that takes perception seriously — and you're ready to apply the same strategic rigor to sound that you apply to visual identity — let's talk.</p>
       <div class="cta-actions reveal d3">
         <a href="mailto:admin@foerycreative.com" class="cta-primary">Let's Talk</a>
         <span class="cta-email">admin@foerycreative.com</span>
