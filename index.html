@@ -818,15 +818,44 @@
       background: var(--surface);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
+      padding: 0;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-      margin-top: 56px;
+      grid-template-columns: 2fr 3fr;
+      min-height: 660px;
     }
+
+    .about-photo-col {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 12%;
+      display: block;
+    }
+
+    .about-photo-col::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 45%, var(--surface) 100%);
+      pointer-events: none;
+    }
+
+    .about-content {
+      padding: 96px 72px 96px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #about .eyebrow { margin-bottom: 20px; }
 
     .about-name {
       font-family: 'Anton', sans-serif;
@@ -851,25 +880,27 @@
       color: var(--text-2);
       line-height: 1.82;
       font-weight: 300;
+      margin-bottom: 36px;
     }
 
     .about-quote-block {
       padding-left: 28px;
       border-left: 2px solid var(--accent);
+      margin-bottom: 36px;
     }
 
     .about-quote {
       font-family: 'Anton', sans-serif;
       font-weight: 400;
-      font-size: clamp(22px, 2.5vw, 32px);
+      font-size: clamp(18px, 2vw, 26px);
       letter-spacing: 0.01em;
       line-height: 1.22;
       color: var(--text);
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     .about-quote-sub {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--text-2);
       line-height: 1.75;
       font-weight: 300;
@@ -1030,7 +1061,8 @@
       .manifesto-wrap { grid-template-columns: 1fr; gap: 32px; }
       .services-layout { grid-template-columns: 1fr; gap: 56px; }
       .services-sticky { position: static; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-grid { grid-template-columns: 1fr 1fr; }
+      .about-content { padding: 72px 48px; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
     }
 
@@ -1039,8 +1071,13 @@
       .nav-links { display: none; }
       .lm-inner { grid-template-columns: 1fr; }
       section { padding: 80px 24px; }
+      #about { padding: 0; }
       #hero { padding: 130px 24px 80px; }
       .hero-scroll { left: 24px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-col { min-height: 380px; }
+      .about-photo-col::after { background: linear-gradient(to bottom, transparent 55%, var(--surface) 100%); }
+      .about-content { padding: 48px 24px 64px; }
       .work-featured-inner { grid-template-columns: 1fr; }
       .work-featured-body { padding: 48px 32px; border-right: none; border-bottom: 1px solid var(--border); }
       .work-featured-body .work-client { font-size: 36px; }
@@ -1226,7 +1263,7 @@
     <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
       <div class="stat-item reveal">
         <p class="stat-num">100+</p>
-        <p class="stat-label">Original tracks produced — zero stock music, ever</p>
+        <p class="stat-label">Original tracks delivered — zero stock music, ever</p>
       </div>
       <div class="stat-item reveal d1">
         <p class="stat-num">1.2M+</p>
@@ -1244,36 +1281,37 @@
 
 <!-- ═══════════════ ABOUT ═══════════════ -->
 <section id="about">
-  <div class="section-inner">
-    <p class="eyebrow reveal">The Founder</p>
-    <div class="about-grid">
+  <div class="about-grid">
 
-      <div>
-        <h2 class="about-name reveal d1">Brendan Foery</h2>
-        <p class="about-role reveal d2">Founder &amp; Creative Director, FCG</p>
-        <p class="about-bio reveal d3">
-          Brendan Foery is the founder of Foery Creative Group — a sonic branding and cinematic audio studio focused on helping brands create emotionally unforgettable experiences through sound. With a background in cinematic composition, music production, and creative direction, he specializes in building music that carries the emotional weight of film into modern brand storytelling. His work blends strategic brand thinking with high-impact sound design, helping companies move beyond generic music toward a distinct sonic identity.
-        </p>
-        <div class="social-links reveal d4">
-          <a href="https://www.instagram.com/brendanfoery" target="_blank" rel="noopener" class="social-link">
-            <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            Instagram
-          </a>
-          <a href="https://www.linkedin.com/in/brendanfoery/" target="_blank" rel="noopener" class="social-link">
-            <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
-        </div>
-      </div>
-
-      <div class="reveal d2">
-        <div class="about-quote-block">
-          <p class="about-quote">Sound is not decoration — it is one of the most powerful tools a brand has to shape memory, emotion, and perception.</p>
-          <p class="about-quote-sub">That belief drives everything we build. Every track, every sonic identity, every creative decision is made with one question in mind: will this make people <em>feel</em> something they won't forget?</p>
-        </div>
-      </div>
-
+    <!-- Photo -->
+    <div class="about-photo-col reveal">
+      <img src="images/brendan.jpg" alt="Brendan Foery — Founder, Foery Creative Group" class="about-photo">
     </div>
+
+    <!-- Content -->
+    <div class="about-content">
+      <p class="eyebrow reveal">The Founder</p>
+      <h2 class="about-name reveal d1">Brendan Foery</h2>
+      <p class="about-role reveal d2">Founder &amp; Creative Director, FCG</p>
+      <p class="about-bio reveal d2">
+        Brendan Foery is the founder of Foery Creative Group — a sonic branding and cinematic audio studio focused on helping brands create emotionally unforgettable experiences through sound. With a background in cinematic composition, music production, and creative direction, he specializes in building music that carries the emotional weight of film into modern brand storytelling.
+      </p>
+      <div class="about-quote-block reveal d3">
+        <p class="about-quote">Sound is not decoration — it is one of the most powerful tools a brand has to shape memory, emotion, and perception.</p>
+        <p class="about-quote-sub">That belief drives everything we build. Every track, every decision is made with one question: will this make people <em>feel</em> something they won't forget?</p>
+      </div>
+      <div class="social-links reveal d4">
+        <a href="https://www.instagram.com/brendanfoery" target="_blank" rel="noopener" class="social-link">
+          <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/brendanfoery/" target="_blank" rel="noopener" class="social-link">
+          <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
