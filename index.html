@@ -7,25 +7,28 @@
   <meta name="description" content="FCG builds sonic identities and cinematic audio systems for premium brands that want to be felt, not just heard.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:         #080808;
-      --surface:    #0E0E0E;
-      --surface-2:  #141414;
-      --border:     rgba(237,232,224,0.07);
-      --border-med: rgba(237,232,224,0.14);
-      --text:       #EDE8E0;
-      --text-2:     rgba(237,232,224,0.52);
-      --text-3:     rgba(237,232,224,0.22);
-      --accent:     #C49A4A;
-      --accent-dim: rgba(196,154,74,0.10);
-      --serif:      'Cormorant Garamond', Georgia, serif;
-      --sans:       'Inter', system-ui, sans-serif;
-      --r:          3px;
-      --max:        1140px;
+      --bg:          #0D1B2A;
+      --surface:     #0b1826;
+      --surface-2:   #122030;
+      --border:      rgba(245,245,240,0.07);
+      --border-med:  rgba(245,245,240,0.14);
+      --text:        #F5F5F0;
+      --text-2:      rgba(245,245,240,0.52);
+      --text-3:      rgba(245,245,240,0.22);
+      --accent:      #FBC02D;
+      --accent-dim:  rgba(251,192,45,0.10);
+      --accent-glow: rgba(251,192,45,0.22);
+      --crimson:     #8C1C13;
+      --display:     'Anton', sans-serif;
+      --serif:       'Cormorant Garamond', Georgia, serif;
+      --sans:        'Inter', system-ui, sans-serif;
+      --r:           3px;
+      --max:         1140px;
     }
 
     html { scroll-behavior: smooth; }
@@ -71,6 +74,7 @@
 
     /* ─── SECTION LABEL ─── */
     .section-label {
+      font-family: var(--display);
       font-size: 10px;
       font-weight: 400;
       letter-spacing: 0.22em;
@@ -93,7 +97,7 @@
       border-bottom: 1px solid transparent;
     }
     #nav.scrolled {
-      background: rgba(8,8,8,0.88);
+      background: rgba(13,27,42,0.92);
       border-color: var(--border);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -106,12 +110,12 @@
       gap: 2px;
     }
     .nav-logo-main {
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.24em;
+      font-family: var(--display);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--text);
+      color: var(--accent);
       line-height: 1;
     }
     .nav-logo-sub {
@@ -174,8 +178,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to right, #080808 32%, rgba(8,8,8,0.72) 58%, rgba(8,8,8,0.28) 100%),
-        linear-gradient(to top, #080808 0%, transparent 35%);
+        linear-gradient(to right, #0D1B2A 32%, rgba(13,27,42,0.75) 58%, rgba(13,27,42,0.22) 100%),
+        linear-gradient(to top, #0D1B2A 0%, transparent 38%);
     }
     .hero-inner {
       max-width: var(--max);
@@ -183,6 +187,7 @@
       width: 100%;
     }
     .hero-eyebrow {
+      font-family: var(--display);
       font-size: 10px;
       font-weight: 400;
       letter-spacing: 0.24em;
@@ -296,8 +301,9 @@
       flex-shrink: 0;
     }
     .strip-item span {
+      font-family: var(--display);
       font-size: 10px;
-      font-weight: 300;
+      font-weight: 400;
       letter-spacing: 0.20em;
       text-transform: uppercase;
       color: var(--text-3);
@@ -340,6 +346,7 @@
       margin-bottom: 36px;
     }
     .project-num {
+      font-family: var(--display);
       font-size: 10px;
       letter-spacing: 0.18em;
       color: var(--accent);
@@ -379,6 +386,7 @@
       margin-bottom: 36px;
     }
     .detail-label {
+      font-family: var(--display);
       font-size: 9px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -597,6 +605,7 @@
       gap: 18px;
     }
     .process-num {
+      font-family: var(--display);
       font-size: 10px;
       letter-spacing: 0.20em;
       color: var(--accent);
@@ -630,6 +639,7 @@
       top: 120px;
     }
     .philosophy-label-text {
+      font-family: var(--display);
       font-size: 10px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -667,7 +677,7 @@
       color: var(--text);
       line-height: 1.4;
       padding-left: 24px;
-      border-left: 1px solid var(--accent);
+      border-left: 2px solid var(--crimson);
       max-width: 44ch;
     }
 
@@ -807,13 +817,14 @@
       border-radius: 1px;
     }
     .bsf-card-active .bsf-bar { background: var(--accent); }
-    .bsf-card:hover:not(.bsf-card-active) .bsf-bar { background: rgba(237,232,224,0.14); }
+    .bsf-card:hover:not(.bsf-card-active) .bsf-bar { background: rgba(245,245,240,0.14); }
     .bsf-num {
+      font-family: var(--display);
       font-size: 9px;
       letter-spacing: 0.14em;
       color: var(--text-3);
     }
-    .bsf-card-active .bsf-num { color: rgba(196,154,74,0.55); }
+    .bsf-card-active .bsf-num { color: rgba(251,192,45,0.55); }
     .bsf-name {
       font-size: 10px;
       font-weight: 500;
@@ -838,6 +849,7 @@
     }
     .cta-inner { max-width: 760px; }
     .cta-eyebrow {
+      font-family: var(--display);
       font-size: 10px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -925,7 +937,7 @@
       #nav { padding: 20px 28px; }
       #hero { padding: 120px 28px 80px; }
       .hero-bg { background-position: center top; }
-      .hero-bg::after { background: linear-gradient(to bottom, rgba(8,8,8,0.55) 0%, #080808 65%); }
+      .hero-bg::after { background: linear-gradient(to bottom, rgba(13,27,42,0.55) 0%, #0D1B2A 65%); }
       .hero-indicator { left: 28px; }
       .nav-links { display: none; }
       .service-item { grid-template-columns: 44px 1fr; gap: 24px; }
@@ -960,22 +972,22 @@
     <li><a href="#process">Process</a></li>
     <li><a href="#about">About</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Start a Conversation</a>
+  <a href="#contact" class="nav-cta">Work With Me</a>
 </nav>
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <span class="hero-eyebrow reveal">Brendan Foery — Creative Director / Composer / Sonic Branding</span>
+    <span class="hero-eyebrow reveal">Brendan Foery — Composer & Sonic Strategist</span>
     <h1 class="hero-headline reveal d1">
-      Building cinematic sonic identities for brands that demand to be <em>felt.</em>
+      Your brand is making people feel something. The question is whether it's on <em>purpose.</em>
     </h1>
     <p class="hero-sub reveal d2">
-      Foery Creative Group helps brands create emotional resonance through cinematic composition, sonic branding, and strategic audio direction.
+      I build sonic identities for brands that want sound to do something — not just fill space. Cinematic in approach. Strategic in outcome.
     </p>
     <div class="hero-ctas reveal d3">
-      <a href="#contact" class="cta-primary">Start a Conversation</a>
+      <a href="#contact" class="cta-primary">Work With Me</a>
       <a href="#work" class="cta-ghost">
         Explore Work
         <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14m-7-7 7 7-7 7"/></svg>
@@ -1029,7 +1041,7 @@
           </div>
           <h2 class="project-client">T.Rex Arms</h2>
           <p class="project-desc">
-            The brief was precise: elevate perceived scale, intensity, and brand authority for a product launch. We developed a cinematic score engineered around Nolan-esque temporal displacement — tense, percussive, immersive. The result was a composition audiences experienced as film, not marketing.
+            The brief was simple: make this feel massive. I built the score around Nolan-esque temporal displacement — tense, percussive, immersive. The kind of thing that makes a product launch feel like a film. The comment section said it better than I could.
           </p>
           <div class="project-details">
             <div>
@@ -1105,13 +1117,13 @@
       <div class="philosophy-content">
         <h2 class="philosophy-headline reveal d1">Sound arrives before understanding.</h2>
         <p class="philosophy-text reveal d2">
-          Before a viewer reads a headline or consciously registers a visual, they've already formed an emotional response to what they heard. That response shapes everything that follows — trust, memory, desire, perception. The emotional layer is set before the rational mind has a chance to intervene. Most brands leave this entirely to chance.
+          You've already made an emotional decision about a brand before you read a headline, before a logo registers. That decision came from somewhere — the tone of the music, the texture of the environment, the feeling the thing created. Sound sets the emotional context that everything else lands inside.
         </p>
         <p class="philosophy-text reveal d3">
-          We believe sound is the most emotionally direct medium available to a brand. It bypasses analytical processing and lands in the part of the mind that makes real decisions. In an age of infinite visual stimulation, intentional cinematic sound creates emotional residue that lingers long after the content ends.
+          Most brands leave this entirely to chance — or to whoever picks the stock track at the end of post. I exist because there's a better way. Intentional sound doesn't just support a brand. It creates a feeling that outlasts every visual.
         </p>
         <blockquote class="philosophy-pull reveal d4">
-          "The brands that understand sound don't just sound better. They feel different."
+          "When the sound is right, people don't notice it — they just feel differently about the brand."
         </blockquote>
       </div>
     </div>
@@ -1121,7 +1133,7 @@
 <!-- ═══════════════ SERVICES ═══════════════ -->
 <section id="services">
   <div class="wrap">
-    <span class="section-label reveal">What We Do</span>
+    <span class="section-label reveal">What I Do</span>
     <div class="services-list">
 
       <div class="service-item reveal d1">
@@ -1134,7 +1146,7 @@
             <span>Brand Consistency</span>
           </div>
         </div>
-        <p class="service-desc">We develop comprehensive audio identity systems — from sonic logos and brand mnemonics to full emotional tone maps. Every element is engineered to reinforce brand perception, increase recognition, and create subconscious emotional associations that outlast any visual campaign.</p>
+        <p class="service-desc">I build complete audio identity systems — sonic logos, brand mnemonics, emotional tone maps. Everything engineered to reinforce who your brand is and create the subconscious associations that stick long after the campaign ends.</p>
       </div>
 
       <div class="service-item reveal d2">
@@ -1147,7 +1159,7 @@
             <span>Product Launches</span>
           </div>
         </div>
-        <p class="service-desc">High-impact original music for campaigns, launches, trailers, and branded content. We don't license stock — every composition is purpose-built around your brand's emotional objectives and audience psychology. The result feels like cinema, not marketing.</p>
+        <p class="service-desc">Original music for campaigns, launches, and branded content. I don't license stock — every composition is purpose-built around your brand's emotional target. The goal is always the same: it should feel like cinema, not marketing.</p>
       </div>
 
       <div class="service-item reveal d3">
@@ -1160,7 +1172,7 @@
             <span>Creative Strategy</span>
           </div>
         </div>
-        <p class="service-desc">Before a single note is written, we define your brand's sonic DNA. This consultative process explores your brand psychology, emotional targets, and audience perception — producing a Sound Direction framework that governs all future audio decisions and ensures long-term consistency.</p>
+        <p class="service-desc">Before a single note is written, I define your brand's sonic DNA. What does this brand need people to feel? What emotional states support the perception you're building? Sound Direction answers that — and governs every audio decision that follows.</p>
       </div>
 
       <div class="service-item reveal d4">
@@ -1173,7 +1185,7 @@
             <span>Multi-Platform</span>
           </div>
         </div>
-        <p class="service-desc">We build scalable sound ecosystems designed to grow with your brand. From UI audio and product sounds to campaign libraries — every touchpoint becomes an opportunity to reinforce emotional perception and deepen brand loyalty through consistent sonic language.</p>
+        <p class="service-desc">A complete, scalable sound system built for the long game — UI audio, campaign libraries, product sounds. Every touchpoint becomes an opportunity to reinforce emotional perception, not undo it.</p>
       </div>
 
     </div>
@@ -1183,27 +1195,27 @@
 <!-- ═══════════════ PROCESS ═══════════════ -->
 <section id="process">
   <div class="wrap">
-    <span class="section-label reveal">How We Work</span>
+    <span class="section-label reveal">How It Works</span>
     <div class="process-grid">
       <div class="process-step reveal d1">
         <span class="process-num">01 — Discover</span>
         <div class="process-name">Brand Psychology</div>
-        <p class="process-desc">We begin with deep brand intelligence — mapping your emotional targets, audience perception, competitive landscape, and the feeling your brand needs to create. Strategy before sound, always.</p>
+        <p class="process-desc">I start by understanding your brand from the inside — not just the positioning doc, but the feeling you're trying to create and the perception gap you actually need to close. Strategy before sound, always.</p>
       </div>
       <div class="process-step reveal d2">
         <span class="process-num">02 — Define</span>
         <div class="process-name">Sonic Identity Framework</div>
-        <p class="process-desc">We develop your Sound Direction: a precise emotional and tonal framework that governs every audio decision. This is your brand's sonic constitution — built to last, built to scale.</p>
+        <p class="process-desc">I develop your Sound Direction: the emotional and tonal framework that governs every audio decision. Think of it as your brand's sonic constitution — what it should feel like to hear you.</p>
       </div>
       <div class="process-step reveal d3">
         <span class="process-num">03 — Create</span>
         <div class="process-name">Cinematic Execution</div>
-        <p class="process-desc">With strategy locked, we compose and produce every asset with cinematic precision. Nothing ships that doesn't serve the emotional objective and strengthen brand perception.</p>
+        <p class="process-desc">With strategy locked, I compose and produce every asset to the same standard I'd hold a film score to. Nothing ships unless it earns its place emotionally.</p>
       </div>
       <div class="process-step reveal d4">
         <span class="process-num">04 — Deploy</span>
         <div class="process-name">Scalable Implementation</div>
-        <p class="process-desc">We deliver a complete, documented audio system built for deployment across every brand touchpoint — campaigns, digital products, content libraries, and live experiences.</p>
+        <p class="process-desc">You get a complete, documented audio system ready for every touchpoint — campaigns, digital products, content libraries, live experiences. Built to run without me in the room.</p>
       </div>
     </div>
   </div>
@@ -1216,15 +1228,15 @@
     <div class="about-grid">
       <div class="about-body reveal d1">
         <h2 class="about-headline"><em>Brendan Foery</em></h2>
-        <p class="about-text" style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-3);margin-top:-16px;margin-bottom:8px;">Creative Director &amp; Composer</p>
+        <p class="about-text" style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-3);margin-top:-16px;margin-bottom:8px;">Composer & Sonic Strategist</p>
         <p class="about-text">
-          Brendan operates at the intersection of cinematic storytelling and brand identity. His work begins before a note is written — in the psychology of perception, the architecture of emotional response, and the specific feeling a brand needs to create in its audience.
+          I started FCG because most brand audio was being treated as an afterthought — random stock tracks, sound that actively contradicted everything the visual identity tried to build.
         </p>
         <p class="about-text">
-          His background spans composition, creative direction, and sonic strategy. The through line is always the same: how does sound make people feel, and how do we make that intentional?
+          My background is in cinematic composition and creative direction. What I do now is apply that lens to brands: figuring out exactly what a brand should feel like to hear, then building a system that consistently creates that response.
         </p>
         <p class="about-text">
-          FCG is the studio he built to scale that thinking across premium brands.
+          Every project starts with a question most people skip: what is this brand actually trying to make people feel?
         </p>
         <div class="about-stats">
           <div>
@@ -1259,7 +1271,7 @@
       <div class="bsf-body">
         <span class="section-label" style="margin-bottom:0">Free Tool</span>
         <h2 class="bsf-headline reveal d1">Discover your brand's <em>sonic identity.</em></h2>
-        <p class="bsf-desc reveal d2">Most brands pick music and hope for the best. The Brand Sound Finder gives you a real answer — in 3 minutes, for free. Enter your brand's DNA and our system maps you to your 2 best-fit archetypes from 8 distinct cinematic music identities.</p>
+        <p class="bsf-desc reveal d2">Most brands guess at their sound and hope it works. The Brand Sound Finder gives you a real answer — in 3 minutes, for free. Tell me your brand's DNA and I'll map you to your 2 best-fit archetypes from 8 distinct cinematic sound identities.</p>
         <a href="https://brandsoundfinder.foerycreative.com/" target="_blank" rel="noopener" class="bsf-cta reveal d3">
           Find Your Sound
           <svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
@@ -1308,11 +1320,11 @@
 <section id="cta-section">
   <div class="wrap">
     <div class="cta-inner">
-      <span class="cta-eyebrow reveal">Work With Us</span>
+      <span class="cta-eyebrow reveal">Work With Me</span>
       <h2 class="cta-headline reveal d1">Most brands are seen. Very few are <em>felt.</em></h2>
-      <p class="cta-sub reveal d2">FCG creates cinematic sonic identities that leave emotional residue. If your brand demands to be remembered differently — not just seen, but felt — let's build the sound that makes that happen.</p>
+      <p class="cta-sub reveal d2">I take on a focused number of projects at a time. If you're serious about what your brand sounds like — and you're ready to treat sound as strategy, not an afterthought — let's talk.</p>
       <div class="cta-actions reveal d3">
-        <a href="mailto:admin@foerycreative.com" class="cta-primary">Start a Conversation</a>
+        <a href="mailto:admin@foerycreative.com" class="cta-primary">Let's Talk</a>
         <span class="cta-email">admin@foerycreative.com</span>
       </div>
     </div>
@@ -1323,7 +1335,7 @@
 <footer id="contact">
   <div class="wrap">
     <div class="footer-inner">
-      <p class="footer-copy">© 2025 Foery Creative Group. All rights reserved.</p>
+      <p class="footer-copy">© 2026 Foery Creative Group. All rights reserved.</p>
       <div class="footer-links">
         <a href="https://www.instagram.com/brendanfoery" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.linkedin.com/in/brendanfoery/" target="_blank" rel="noopener">LinkedIn</a>
