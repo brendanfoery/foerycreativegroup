@@ -684,6 +684,119 @@
     .d3 { transition-delay: 0.30s; }
     .d4 { transition-delay: 0.40s; }
 
+    /* ─── FEATURED WORK ─── */
+    .work-featured {
+      margin-top: 56px;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      background: var(--surface);
+      position: relative;
+      transition: background 0.35s;
+    }
+
+    .work-featured::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--accent), var(--accent-2), transparent);
+    }
+
+    .work-featured-inner {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+    }
+
+    .work-featured-body {
+      padding: 72px 60px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-featured-body .work-num {
+      margin-bottom: 32px;
+      color: var(--accent);
+      opacity: 0.6;
+    }
+
+    .work-featured-body .work-client {
+      font-size: 52px;
+      margin-bottom: 12px;
+    }
+
+    .work-featured-body .work-desc {
+      font-size: 17px;
+      line-height: 1.75;
+      margin-top: 20px;
+      flex: 1;
+    }
+
+    .work-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 44px;
+    }
+
+    .work-tags-row span {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+
+    .work-featured-side {
+      padding: 72px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 48px;
+    }
+
+    .featured-stat-num {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: 88px;
+      letter-spacing: 0.01em;
+      line-height: 1;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .featured-stat-label {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.55;
+      max-width: 22ch;
+    }
+
+    .featured-divider {
+      height: 1px;
+      background: var(--border);
+    }
+
+    .featured-proof-text {
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .featured-proof-attr {
+      font-size: 11px;
+      color: var(--text-3);
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
       .manifesto-wrap { grid-template-columns: 1fr; gap: 32px; }
@@ -698,7 +811,11 @@
       section { padding: 80px 24px; }
       #hero { padding: 130px 24px 80px; }
       .hero-scroll { left: 24px; }
-      .work-grid { grid-template-columns: 1fr; }
+      .work-featured-inner { grid-template-columns: 1fr; }
+      .work-featured-body { padding: 48px 32px; border-right: none; border-bottom: 1px solid var(--border); }
+      .work-featured-body .work-client { font-size: 36px; }
+      .work-featured-side { padding: 40px 32px; gap: 32px; }
+      .featured-stat-num { font-size: 64px; }
       footer { padding: 28px 24px; flex-direction: column; gap: 10px; text-align: center; }
     }
 
@@ -783,53 +900,38 @@
       </div>
     </div>
 
-    <div class="work-grid">
+    <div class="work-featured reveal d1">
+      <div class="work-featured-inner">
 
-      <div class="work-card reveal">
-        <p class="work-num">01</p>
-        <h3 class="work-client">T.Rex Arms</h3>
-        <span class="work-tag">Tactical Gear &amp; Defense</span>
-        <p class="work-desc">
-          The brief was direct: make it feel like <em style="font-style:italic; color:var(--text);">Tenet</em>. We built a track from the ground up — tense, percussive, time-inverted — engineered to put the audience inside a Nolan film. The video crossed 1.2M+ views. The comments needed no prompting. Audiences independently named exactly what we'd set out to create.
-        </p>
-        <div class="work-footer">
-          <span class="work-scope">Sonic Composition · Creative Direction</span>
-          <div class="work-arrow">
-            <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        <!-- Story -->
+        <div class="work-featured-body">
+          <p class="work-num">Featured Project</p>
+          <h3 class="work-client">T.Rex Arms</h3>
+          <span class="work-tag">Tactical Gear &amp; Defense</span>
+          <p class="work-desc">
+            The brief was direct: make it feel like <em style="font-style:italic;color:var(--text);">Tenet</em>. We built a track from the ground up — tense, percussive, time-inverted — engineered to place the audience inside a Nolan film. The video crossed 1.2M+ views. The comments needed no prompting. Audiences independently named exactly what we'd set out to create.
+          </p>
+          <div class="work-tags-row">
+            <span>Sonic Composition</span>
+            <span>Creative Direction</span>
+            <span>Film-Inspired Score</span>
           </div>
         </div>
-      </div>
 
-      <div class="work-card reveal d1">
-        <p class="work-num">02</p>
-        <h3 class="work-client">Volta Motors</h3>
-        <span class="work-tag">Electric Vehicles</span>
-        <p class="work-desc">
-          The sound of the future. Crafting a full audio ecosystem for an EV brand entering 12 new global markets — including exterior pedestrian alerts, interior soundscapes, and launch anthem.
-        </p>
-        <div class="work-footer">
-          <span class="work-scope">Creative Direction · Audio Design</span>
-          <div class="work-arrow">
-            <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        <!-- Stat + Proof -->
+        <div class="work-featured-side">
+          <div>
+            <p class="featured-stat-num">1.2M+</p>
+            <p class="featured-stat-label">Views on a single sonic campaign</p>
+          </div>
+          <div class="featured-divider"></div>
+          <div>
+            <p class="featured-proof-text">"This literally sounds like I'm watching Tenet."</p>
+            <p class="featured-proof-attr">— The comment section</p>
           </div>
         </div>
-      </div>
 
-      <div class="work-card reveal d2">
-        <p class="work-num">03</p>
-        <h3 class="work-client">Lumis Health</h3>
-        <span class="work-tag">Wellness & Healthcare</span>
-        <p class="work-desc">
-          Healing begins with how you feel. A therapeutic sonic language for a next-generation wellness platform — building emotional resonance across every patient and consumer touchpoint.
-        </p>
-        <div class="work-footer">
-          <span class="work-scope">Strategy · Identity · Soundscapes</span>
-          <div class="work-arrow">
-            <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -911,19 +1013,6 @@
         <p class="stat-label">Client retention rate in year one</p>
       </div>
     </div>
-  </div>
-</section>
-
-<div class="grad-line"></div>
-
-<!-- ═══════════════ QUOTE ═══════════════ -->
-<section id="quote">
-  <div class="section-inner">
-    <span class="quote-mark reveal">"</span>
-    <p class="quote-text reveal d1">
-      This literally sounds like I'm watching Tenet.
-    </p>
-    <p class="quote-attr reveal d2">— Comment section, 1.2M+ views · T.Rex Arms</p>
   </div>
 </section>
 
