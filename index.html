@@ -7,28 +7,25 @@
   <meta name="description" content="FCG builds sonic identities and cinematic audio systems for premium brands that want to be felt, not just heard.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:          #0D1B2A;
-      --surface:     #0b1826;
-      --surface-2:   #122030;
-      --border:      rgba(245,245,240,0.07);
-      --border-med:  rgba(245,245,240,0.14);
-      --text:        #F5F5F0;
-      --text-2:      rgba(245,245,240,0.52);
-      --text-3:      rgba(245,245,240,0.22);
-      --accent:      #FBC02D;
-      --accent-dim:  rgba(251,192,45,0.10);
-      --accent-glow: rgba(251,192,45,0.22);
-      --crimson:     #8C1C13;
-      --display:     'Anton', sans-serif;
-      --serif:       'Cormorant Garamond', Georgia, serif;
-      --sans:        'Inter', system-ui, sans-serif;
-      --r:           3px;
-      --max:         1140px;
+      --bg:         #080808;
+      --surface:    #0E0E0E;
+      --surface-2:  #141414;
+      --border:     rgba(237,232,224,0.07);
+      --border-med: rgba(237,232,224,0.14);
+      --text:       #EDE8E0;
+      --text-2:     rgba(237,232,224,0.52);
+      --text-3:     rgba(237,232,224,0.22);
+      --accent:     #C49A4A;
+      --accent-dim: rgba(196,154,74,0.10);
+      --serif:      'Cormorant Garamond', Georgia, serif;
+      --sans:       'Inter', system-ui, sans-serif;
+      --r:          3px;
+      --max:        1140px;
     }
 
     html { scroll-behavior: smooth; }
@@ -74,7 +71,6 @@
 
     /* ─── SECTION LABEL ─── */
     .section-label {
-      font-family: var(--display);
       font-size: 10px;
       font-weight: 400;
       letter-spacing: 0.22em;
@@ -97,7 +93,7 @@
       border-bottom: 1px solid transparent;
     }
     #nav.scrolled {
-      background: rgba(13,27,42,0.92);
+      background: rgba(8,8,8,0.88);
       border-color: var(--border);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -110,12 +106,12 @@
       gap: 2px;
     }
     .nav-logo-main {
-      font-family: var(--display);
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: 0.18em;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--text);
       line-height: 1;
     }
     .nav-logo-sub {
@@ -178,8 +174,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to right, #0D1B2A 32%, rgba(13,27,42,0.75) 58%, rgba(13,27,42,0.22) 100%),
-        linear-gradient(to top, #0D1B2A 0%, transparent 38%);
+        linear-gradient(to right, #080808 32%, rgba(8,8,8,0.72) 58%, rgba(8,8,8,0.28) 100%),
+        linear-gradient(to top, #080808 0%, transparent 35%);
     }
     .hero-inner {
       max-width: var(--max);
@@ -187,7 +183,6 @@
       width: 100%;
     }
     .hero-eyebrow {
-      font-family: var(--display);
       font-size: 10px;
       font-weight: 400;
       letter-spacing: 0.24em;
@@ -301,9 +296,8 @@
       flex-shrink: 0;
     }
     .strip-item span {
-      font-family: var(--display);
       font-size: 10px;
-      font-weight: 400;
+      font-weight: 300;
       letter-spacing: 0.20em;
       text-transform: uppercase;
       color: var(--text-3);
@@ -346,7 +340,6 @@
       margin-bottom: 36px;
     }
     .project-num {
-      font-family: var(--display);
       font-size: 10px;
       letter-spacing: 0.18em;
       color: var(--accent);
@@ -386,7 +379,6 @@
       margin-bottom: 36px;
     }
     .detail-label {
-      font-family: var(--display);
       font-size: 9px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -605,7 +597,6 @@
       gap: 18px;
     }
     .process-num {
-      font-family: var(--display);
       font-size: 10px;
       letter-spacing: 0.20em;
       color: var(--accent);
@@ -639,7 +630,6 @@
       top: 120px;
     }
     .philosophy-label-text {
-      font-family: var(--display);
       font-size: 10px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -677,7 +667,7 @@
       color: var(--text);
       line-height: 1.4;
       padding-left: 24px;
-      border-left: 2px solid var(--crimson);
+      border-left: 1px solid var(--accent);
       max-width: 44ch;
     }
 
@@ -817,14 +807,13 @@
       border-radius: 1px;
     }
     .bsf-card-active .bsf-bar { background: var(--accent); }
-    .bsf-card:hover:not(.bsf-card-active) .bsf-bar { background: rgba(245,245,240,0.14); }
+    .bsf-card:hover:not(.bsf-card-active) .bsf-bar { background: rgba(237,232,224,0.14); }
     .bsf-num {
-      font-family: var(--display);
       font-size: 9px;
       letter-spacing: 0.14em;
       color: var(--text-3);
     }
-    .bsf-card-active .bsf-num { color: rgba(251,192,45,0.55); }
+    .bsf-card-active .bsf-num { color: rgba(196,154,74,0.55); }
     .bsf-name {
       font-size: 10px;
       font-weight: 500;
@@ -849,7 +838,6 @@
     }
     .cta-inner { max-width: 760px; }
     .cta-eyebrow {
-      font-family: var(--display);
       font-size: 10px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -937,7 +925,7 @@
       #nav { padding: 20px 28px; }
       #hero { padding: 120px 28px 80px; }
       .hero-bg { background-position: center top; }
-      .hero-bg::after { background: linear-gradient(to bottom, rgba(13,27,42,0.55) 0%, #0D1B2A 65%); }
+      .hero-bg::after { background: linear-gradient(to bottom, rgba(8,8,8,0.55) 0%, #080808 65%); }
       .hero-indicator { left: 28px; }
       .nav-links { display: none; }
       .service-item { grid-template-columns: 44px 1fr; gap: 24px; }
