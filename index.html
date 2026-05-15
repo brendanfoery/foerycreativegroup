@@ -1012,14 +1012,13 @@
     }
 
     .lm-arch {
-      aspect-ratio: 1;
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 10px;
       display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 14px;
+      flex-direction: column;
+      padding: 14px 12px 12px;
+      gap: 10px;
       transition: border-color 0.3s, background 0.3s;
     }
 
@@ -1034,21 +1033,51 @@
       display: flex;
       align-items: flex-end;
       gap: 3px;
-      height: 28px;
+      height: 24px;
       width: 100%;
-      justify-content: center;
     }
 
     .lm-bar {
-      width: 4px;
+      flex: 1;
       background: var(--text-3);
       border-radius: 2px 2px 0 0;
-      flex-shrink: 0;
       transition: background 0.3s;
+      min-width: 0;
     }
 
     .lm-arch-active .lm-bar { background: var(--accent); }
     .lm-arch:not(.lm-arch-active):hover .lm-bar { background: var(--border-med); }
+
+    .lm-arch-num {
+      font-size: 9px;
+      color: var(--text-3);
+      letter-spacing: 0.12em;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .lm-arch-name {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      color: var(--text);
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .lm-arch-feel {
+      font-size: 8.5px;
+      color: var(--text-3);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    .lm-arch-active .lm-arch-num { color: rgba(251,192,45,0.6); }
+    .lm-arch-active .lm-arch-name { color: var(--accent); }
+    .lm-arch-active .lm-arch-feel { color: rgba(251,192,45,0.5); }
 
     .lm-arch-caption {
       font-size: 13px;
@@ -1351,14 +1380,110 @@
       <!-- 8 archetype visual -->
       <div class="reveal d2">
         <div class="lm-archetypes" id="lm-archetypes">
-          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:30%"></div><div class="lm-bar" style="height:70%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:70%"></div><div class="lm-bar" style="height:30%"></div></div></div>
-          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:100%"></div></div></div>
-          <div class="lm-arch lm-arch-active"><div class="lm-bars"><div class="lm-bar" style="height:20%"></div><div class="lm-bar" style="height:20%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:20%"></div><div class="lm-bar" style="height:20%"></div></div></div>
-          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:50%"></div><div class="lm-bar" style="height:20%"></div><div class="lm-bar" style="height:50%"></div><div class="lm-bar" style="height:100%"></div></div></div>
-          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:60%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:60%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:60%"></div></div></div>
-          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:30%"></div><div class="lm-bar" style="height:80%"></div><div class="lm-bar" style="height:30%"></div><div class="lm-bar" style="height:100%"></div></div></div>
-          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:40%"></div><div class="lm-bar" style="height:65%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:85%"></div><div class="lm-bar" style="height:55%"></div></div></div>
-          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:70%"></div><div class="lm-bar" style="height:45%"></div><div class="lm-bar" style="height:30%"></div><div class="lm-bar" style="height:45%"></div><div class="lm-bar" style="height:70%"></div></div></div>
+          <!-- 01 EPIC / CINEMATIC — active (T.Rex Arms case study) -->
+          <div class="lm-arch lm-arch-active">
+            <div class="lm-bars">
+              <div class="lm-bar" style="height:30%"></div>
+              <div class="lm-bar" style="height:70%"></div>
+              <div class="lm-bar" style="height:100%"></div>
+              <div class="lm-bar" style="height:85%"></div>
+              <div class="lm-bar" style="height:65%"></div>
+            </div>
+            <span class="lm-arch-num">01</span>
+            <div class="lm-arch-name">Epic / Cinematic</div>
+            <div class="lm-arch-feel">Awe · Legacy · Consequence</div>
+          </div>
+          <!-- 02 TENSION / SUSPENSE -->
+          <div class="lm-arch">
+            <div class="lm-bars">
+              <div class="lm-bar" style="height:80%"></div>
+              <div class="lm-bar" style="height:15%"></div>
+              <div class="lm-bar" style="height:65%"></div>
+              <div class="lm-bar" style="height:15%"></div>
+              <div class="lm-bar" style="height:85%"></div>
+            </div>
+            <span class="lm-arch-num">02</span>
+            <div class="lm-arch-name">Tension / Suspense</div>
+            <div class="lm-arch-feel">Alertness · Intelligence · Control</div>
+          </div>
+          <!-- 03 RUGGED / ANTHEMIC -->
+          <div class="lm-arch">
+            <div class="lm-bars">
+              <div class="lm-bar" style="height:70%"></div>
+              <div class="lm-bar" style="height:80%"></div>
+              <div class="lm-bar" style="height:75%"></div>
+              <div class="lm-bar" style="height:85%"></div>
+              <div class="lm-bar" style="height:70%"></div>
+            </div>
+            <span class="lm-arch-num">03</span>
+            <div class="lm-arch-name">Rugged / Anthemic</div>
+            <div class="lm-arch-feel">Pride · Craft · Belonging</div>
+          </div>
+          <!-- 04 ADVENTUROUS / KINETIC -->
+          <div class="lm-arch">
+            <div class="lm-bars">
+              <div class="lm-bar" style="height:90%"></div>
+              <div class="lm-bar" style="height:100%"></div>
+              <div class="lm-bar" style="height:90%"></div>
+              <div class="lm-bar" style="height:100%"></div>
+              <div class="lm-bar" style="height:90%"></div>
+            </div>
+            <span class="lm-arch-num">04</span>
+            <div class="lm-arch-name">Adventurous / Kinetic</div>
+            <div class="lm-arch-feel">Excitement · Momentum · Thrill</div>
+          </div>
+          <!-- 05 PREMIUM / UNDERSTATED -->
+          <div class="lm-arch">
+            <div class="lm-bars">
+              <div class="lm-bar" style="height:15%"></div>
+              <div class="lm-bar" style="height:8%"></div>
+              <div class="lm-bar" style="height:25%"></div>
+              <div class="lm-bar" style="height:8%"></div>
+              <div class="lm-bar" style="height:15%"></div>
+            </div>
+            <span class="lm-arch-num">05</span>
+            <div class="lm-arch-name">Premium / Understated</div>
+            <div class="lm-arch-feel">Refinement · Confidence · Taste</div>
+          </div>
+          <!-- 06 WARM / HUMAN -->
+          <div class="lm-arch">
+            <div class="lm-bars">
+              <div class="lm-bar" style="height:40%"></div>
+              <div class="lm-bar" style="height:50%"></div>
+              <div class="lm-bar" style="height:45%"></div>
+              <div class="lm-bar" style="height:55%"></div>
+              <div class="lm-bar" style="height:40%"></div>
+            </div>
+            <span class="lm-arch-num">06</span>
+            <div class="lm-arch-name">Warm / Human</div>
+            <div class="lm-arch-feel">Belonging · Grace · Intimacy</div>
+          </div>
+          <!-- 07 FUTURISTIC / ELECTRONIC -->
+          <div class="lm-arch">
+            <div class="lm-bars">
+              <div class="lm-bar" style="height:65%"></div>
+              <div class="lm-bar" style="height:65%"></div>
+              <div class="lm-bar" style="height:65%"></div>
+              <div class="lm-bar" style="height:65%"></div>
+              <div class="lm-bar" style="height:65%"></div>
+            </div>
+            <span class="lm-arch-num">07</span>
+            <div class="lm-arch-name">Futuristic / Electronic</div>
+            <div class="lm-arch-feel">Intelligence · Progress · Precision</div>
+          </div>
+          <!-- 08 INSPIRATIONAL / UPLIFTING -->
+          <div class="lm-arch">
+            <div class="lm-bars">
+              <div class="lm-bar" style="height:10%"></div>
+              <div class="lm-bar" style="height:25%"></div>
+              <div class="lm-bar" style="height:50%"></div>
+              <div class="lm-bar" style="height:80%"></div>
+              <div class="lm-bar" style="height:100%"></div>
+            </div>
+            <span class="lm-arch-num">08</span>
+            <div class="lm-arch-name">Inspirational / Uplifting</div>
+            <div class="lm-arch-feel">Hope · Transformation · Growth</div>
+          </div>
         </div>
         <p class="lm-arch-caption">8 sonic archetypes. Your brand fits two. Find out which ones.</p>
       </div>
@@ -1542,16 +1667,29 @@
   drawBars();
 
   // ─── Archetype bar animation ───
+  // [speed multiplier, amplitude multiplier] per archetype index
+  const lmMoodParams = [
+    [0.8,  1.0],  // 01 Epic/Cinematic    — slow, large sweeps
+    [1.5,  0.5],  // 02 Tension/Suspense  — fast, sparse/erratic
+    [1.0,  0.8],  // 03 Rugged/Anthemic   — steady, medium
+    [2.0,  1.0],  // 04 Adventurous/Kinetic — very fast, full
+    [0.4,  0.3],  // 05 Premium/Understated — very slow, minimal
+    [0.6,  0.5],  // 06 Warm/Human         — slow, gentle
+    [1.8,  0.7],  // 07 Futuristic/Electronic — fast mechanical, precise
+    [0.7,  0.9],  // 08 Inspirational/Uplifting — medium, building
+  ];
+
   const lmBars = Array.from(document.querySelectorAll('.lm-bar'));
   const lmBase = lmBars.map(b => parseFloat(b.style.height));
   let lmT = 0;
 
   function animateLmBars() {
     lmBars.forEach((bar, i) => {
-      const arch = Math.floor(i / 5);
-      const pos  = i % 5;
-      const wave = Math.sin(lmT * 1.4 + arch * 1.3 + pos * 0.9) * 14;
-      bar.style.height = Math.max(8, Math.min(100, lmBase[i] + wave)) + '%';
+      const arch  = Math.floor(i / 5);
+      const pos   = i % 5;
+      const [spd, amp] = lmMoodParams[arch] || [1.0, 1.0];
+      const wave  = Math.sin(lmT * spd * 1.4 + arch * 1.3 + pos * 0.9) * 14 * amp;
+      bar.style.height = Math.max(6, Math.min(100, lmBase[i] + wave)) + '%';
     });
     lmT += 0.018;
     requestAnimationFrame(animateLmBars);
