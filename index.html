@@ -910,6 +910,121 @@
 
     .footer-social .social-link { font-size: 12px; }
 
+    /* ─── LEAD MAGNET ─── */
+    .lm-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 56px;
+    }
+
+    .lm-headline {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: clamp(30px, 3.8vw, 50px);
+      letter-spacing: 0.01em;
+      line-height: 1.05;
+      margin-top: 12px;
+      margin-bottom: 20px;
+    }
+
+    .lm-sub {
+      font-size: 16px;
+      color: var(--text-2);
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 36px;
+    }
+
+    .lm-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .lm-step {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .lm-step-num {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      padding-top: 2px;
+    }
+
+    .lm-step p { font-size: 14px; color: var(--text-2); line-height: 1.6; }
+
+    .lm-cta { font-size: 15px; padding: 14px 30px; }
+
+    .lm-free {
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--text-3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .lm-archetypes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .lm-arch {
+      aspect-ratio: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 14px;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .lm-arch:hover { border-color: var(--border-med); background: var(--surface-2); }
+
+    .lm-arch-active {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    .lm-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 28px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .lm-bar {
+      width: 4px;
+      background: var(--text-3);
+      border-radius: 2px 2px 0 0;
+      flex-shrink: 0;
+      transition: background 0.3s;
+    }
+
+    .lm-arch-active .lm-bar { background: var(--accent); }
+    .lm-arch:not(.lm-arch-active):hover .lm-bar { background: var(--border-med); }
+
+    .lm-arch-caption {
+      font-size: 13px;
+      color: var(--text-3);
+      line-height: 1.55;
+    }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
       .manifesto-wrap { grid-template-columns: 1fr; gap: 32px; }
@@ -922,6 +1037,7 @@
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
       .nav-links { display: none; }
+      .lm-inner { grid-template-columns: 1fr; }
       section { padding: 80px 24px; }
       #hero { padding: 130px 24px 80px; }
       .hero-scroll { left: 24px; }
@@ -1163,6 +1279,58 @@
 
 <div class="grad-line"></div>
 
+<!-- ═══════════════ LEAD MAGNET ═══════════════ -->
+<section id="lead-magnet" style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Free Tool</p>
+    <div class="lm-inner">
+
+      <!-- Copy -->
+      <div>
+        <h2 class="lm-headline reveal d1">What does your brand actually sound like?</h2>
+        <p class="lm-sub reveal d2">Most brands pick music and hope for the best. The Brand Sound Finder gives you a real answer — in 3 minutes, for free. Enter your brand's DNA and our AI maps you to your 2 best-fit sonic archetypes from 8 distinct music identities.</p>
+        <div class="lm-steps reveal d2">
+          <div class="lm-step">
+            <span class="lm-step-num">01</span>
+            <p>Enter your brand's values, audience, and the emotion you want to own</p>
+          </div>
+          <div class="lm-step">
+            <span class="lm-step-num">02</span>
+            <p>AI cross-references your inputs against 8 distinct sonic archetypes</p>
+          </div>
+          <div class="lm-step">
+            <span class="lm-step-num">03</span>
+            <p>Receive your 2 best-fit music prescriptions — explained and ready to act on</p>
+          </div>
+        </div>
+        <a href="https://brandsoundfinder.foerycreative.com/" target="_blank" rel="noopener" class="btn btn-primary lm-cta reveal d3">
+          Find Your Sound
+          <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <p class="lm-free reveal d3">Free &nbsp;·&nbsp; 3 minutes &nbsp;·&nbsp; No signup required</p>
+      </div>
+
+      <!-- 8 archetype visual -->
+      <div class="reveal d2">
+        <div class="lm-archetypes" id="lm-archetypes">
+          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:30%"></div><div class="lm-bar" style="height:70%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:70%"></div><div class="lm-bar" style="height:30%"></div></div></div>
+          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:100%"></div></div></div>
+          <div class="lm-arch lm-arch-active"><div class="lm-bars"><div class="lm-bar" style="height:20%"></div><div class="lm-bar" style="height:20%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:20%"></div><div class="lm-bar" style="height:20%"></div></div></div>
+          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:50%"></div><div class="lm-bar" style="height:20%"></div><div class="lm-bar" style="height:50%"></div><div class="lm-bar" style="height:100%"></div></div></div>
+          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:60%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:60%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:60%"></div></div></div>
+          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:30%"></div><div class="lm-bar" style="height:80%"></div><div class="lm-bar" style="height:30%"></div><div class="lm-bar" style="height:100%"></div></div></div>
+          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:40%"></div><div class="lm-bar" style="height:65%"></div><div class="lm-bar" style="height:100%"></div><div class="lm-bar" style="height:85%"></div><div class="lm-bar" style="height:55%"></div></div></div>
+          <div class="lm-arch"><div class="lm-bars"><div class="lm-bar" style="height:70%"></div><div class="lm-bar" style="height:45%"></div><div class="lm-bar" style="height:30%"></div><div class="lm-bar" style="height:45%"></div><div class="lm-bar" style="height:70%"></div></div></div>
+        </div>
+        <p class="lm-arch-caption">8 sonic archetypes. Your brand fits two. Find out which ones.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="grad-line"></div>
+
 <!-- ═══════════════ CONTACT ═══════════════ -->
 <section id="contact">
   <div class="contact-glow"></div>
@@ -1334,6 +1502,23 @@
   resizeBars();
   window.addEventListener('resize', resizeBars, { passive: true });
   drawBars();
+
+  // ─── Archetype bar animation ───
+  const lmBars = Array.from(document.querySelectorAll('.lm-bar'));
+  const lmBase = lmBars.map(b => parseFloat(b.style.height));
+  let lmT = 0;
+
+  function animateLmBars() {
+    lmBars.forEach((bar, i) => {
+      const arch = Math.floor(i / 5);
+      const pos  = i % 5;
+      const wave = Math.sin(lmT * 1.4 + arch * 1.3 + pos * 0.9) * 14;
+      bar.style.height = Math.max(8, Math.min(100, lmBase[i] + wave)) + '%';
+    });
+    lmT += 0.018;
+    requestAnimationFrame(animateLmBars);
+  }
+  animateLmBars();
 </script>
 </body>
 </html>
