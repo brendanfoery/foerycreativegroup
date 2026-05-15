@@ -813,13 +813,81 @@
 
     .watch-link:hover { opacity: 0.7; }
 
-    .sc-embed {
+    /* ─── AUDIO PLAYER ─── */
+    .audio-player {
       margin-top: 28px;
-      border-radius: 8px;
-      overflow: hidden;
+      background: var(--surface-2);
       border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
-    .sc-embed iframe { display: block; }
+    .ap-btn {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+      padding: 0;
+    }
+    .ap-btn:hover { background: var(--accent); color: var(--bg); }
+    .ap-btn svg { display: block; }
+    .ap-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      min-width: 0;
+    }
+    .ap-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      text-transform: uppercase;
+    }
+    .ap-track {
+      position: relative;
+      height: 3px;
+      background: var(--border-med);
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .ap-fill {
+      position: absolute;
+      left: 0; top: 0; height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+    .ap-thumb {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px; height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      left: 0%;
+      transition: left 0.1s linear;
+      pointer-events: none;
+    }
+    .ap-time {
+      font-size: 10px;
+      color: var(--text-3);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
 
     /* ─── ABOUT ─── */
     #about {
@@ -1225,8 +1293,21 @@
             Watch the Campaign
             <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
-          <div class="sc-embed">
-            <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2321286932&color=%23FBC02D&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+          <div class="audio-player" id="ap-tenet">
+            <button class="ap-btn" id="ap-tenet-btn" aria-label="Play Tenet">
+              <svg id="ap-tenet-icon" width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+                <polygon points="3,1 13,7 3,13"/>
+              </svg>
+            </button>
+            <div class="ap-center">
+              <div class="ap-title">Tenet — Original Score</div>
+              <div class="ap-track" id="ap-tenet-track">
+                <div class="ap-fill" id="ap-tenet-fill"></div>
+                <div class="ap-thumb" id="ap-tenet-thumb"></div>
+              </div>
+            </div>
+            <span class="ap-time" id="ap-tenet-time">0:00</span>
+            <audio id="ap-tenet-audio" preload="none" src="audio/tenet.mp3"></audio>
           </div>
         </div>
 
@@ -1706,6 +1787,48 @@
     requestAnimationFrame(animateLmBars);
   }
   animateLmBars();
+
+  // ─── Custom audio player ───
+  (function() {
+    const audio  = document.getElementById('ap-tenet-audio');
+    const btn    = document.getElementById('ap-tenet-btn');
+    const icon   = document.getElementById('ap-tenet-icon');
+    const fill   = document.getElementById('ap-tenet-fill');
+    const thumb  = document.getElementById('ap-tenet-thumb');
+    const track  = document.getElementById('ap-tenet-track');
+    const timeEl = document.getElementById('ap-tenet-time');
+
+    const PLAY_ICON  = '<polygon points="3,1 13,7 3,13"/>';
+    const PAUSE_ICON = '<rect x="3" y="1" width="3" height="12"/><rect x="8" y="1" width="3" height="12"/>';
+
+    function fmt(s) {
+      const m = Math.floor(s / 60);
+      const sec = Math.floor(s % 60);
+      return m + ':' + (sec < 10 ? '0' : '') + sec;
+    }
+
+    btn.addEventListener('click', () => {
+      if (audio.paused) { audio.play(); } else { audio.pause(); }
+    });
+
+    audio.addEventListener('play',  () => { icon.innerHTML = PAUSE_ICON; });
+    audio.addEventListener('pause', () => { icon.innerHTML = PLAY_ICON; });
+    audio.addEventListener('ended', () => { icon.innerHTML = PLAY_ICON; });
+
+    audio.addEventListener('timeupdate', () => {
+      if (!audio.duration) return;
+      const pct = (audio.currentTime / audio.duration) * 100;
+      fill.style.width  = pct + '%';
+      thumb.style.left  = pct + '%';
+      timeEl.textContent = fmt(audio.currentTime);
+    });
+
+    track.addEventListener('click', e => {
+      const rect = track.getBoundingClientRect();
+      const pct  = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      audio.currentTime = pct * audio.duration;
+    });
+  })();
 </script>
 </body>
 </html>
