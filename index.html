@@ -159,6 +159,23 @@
       flex-direction: column;
       justify-content: center;
       padding: 160px 48px 120px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/brendan.jpg');
+      background-size: cover;
+      background-position: right top;
+      background-repeat: no-repeat;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, #080808 32%, rgba(8,8,8,0.72) 58%, rgba(8,8,8,0.28) 100%),
+        linear-gradient(to top, #080808 0%, transparent 35%);
     }
     .hero-inner {
       max-width: var(--max);
@@ -600,11 +617,65 @@
       line-height: 1.8;
     }
 
-    /* ─── ABOUT ─── */
-    #about { padding: 128px 0; }
+    /* ─── PHILOSOPHY ─── */
+    #philosophy { padding: 128px 0; border-top: 1px solid var(--border); }
+    .philosophy-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 96px;
+      align-items: start;
+    }
+    .philosophy-label {
+      position: sticky;
+      top: 120px;
+    }
+    .philosophy-label-text {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      display: block;
+      margin-bottom: 20px;
+    }
+    .philosophy-label-line {
+      width: 1px;
+      height: 64px;
+      background: var(--border-med);
+      display: block;
+    }
+    .philosophy-content { display: flex; flex-direction: column; gap: 32px; }
+    .philosophy-headline {
+      font-family: var(--serif);
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--text);
+      letter-spacing: -0.015em;
+    }
+    .philosophy-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-2);
+      line-height: 1.9;
+      max-width: 58ch;
+    }
+    .philosophy-pull {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.4;
+      padding-left: 24px;
+      border-left: 1px solid var(--accent);
+      max-width: 44ch;
+    }
+
+    /* ─── FOUNDER ─── */
+    #about { padding: 128px 0; border-top: 1px solid var(--border); }
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1.1fr;
+      grid-template-columns: 1.1fr 1fr;
       gap: 96px;
       align-items: center;
     }
@@ -839,6 +910,9 @@
       .project-body { border-right: none; border-bottom: 1px solid var(--border); padding: 44px 36px; }
       .project-side { padding: 36px 36px; flex-direction: row; flex-wrap: wrap; gap: 28px; align-items: center; }
       .project-divider { display: none; }
+      .philosophy-inner { grid-template-columns: 1fr; gap: 48px; }
+      .philosophy-label { position: static; display: flex; align-items: center; gap: 20px; }
+      .philosophy-label-line { width: 40px; height: 1px; display: inline-block; }
       .process-grid { grid-template-columns: repeat(2,1fr); }
       .about-grid { grid-template-columns: 1fr; gap: 56px; }
       .about-img-wrap { aspect-ratio: 4/3; max-height: 500px; }
@@ -850,6 +924,8 @@
       .wrap { padding: 0 28px; }
       #nav { padding: 20px 28px; }
       #hero { padding: 120px 28px 80px; }
+      .hero-bg { background-position: center top; }
+      .hero-bg::after { background: linear-gradient(to bottom, rgba(8,8,8,0.55) 0%, #080808 65%); }
       .hero-indicator { left: 28px; }
       .nav-links { display: none; }
       .service-item { grid-template-columns: 44px 1fr; gap: 24px; }
@@ -889,13 +965,14 @@
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section id="hero">
+  <div class="hero-bg"></div>
   <div class="hero-inner">
-    <span class="hero-eyebrow reveal">Foery Creative Group — Sonic Branding Consultancy</span>
+    <span class="hero-eyebrow reveal">Brendan Foery — Creative Director / Composer / Sonic Branding</span>
     <h1 class="hero-headline reveal d1">
-      Sound is the most overlooked layer of <em>brand perception.</em>
+      Building cinematic sonic identities for brands that demand to be <em>felt.</em>
     </h1>
     <p class="hero-sub reveal d2">
-      FCG builds sonic identities and cinematic audio systems for premium brands that want to be felt, not just heard.
+      Foery Creative Group helps brands create emotional resonance through cinematic composition, sonic branding, and strategic audio direction.
     </p>
     <div class="hero-ctas reveal d3">
       <a href="#contact" class="cta-primary">Start a Conversation</a>
@@ -1017,6 +1094,30 @@
   </div>
 </section>
 
+<!-- ═══════════════ PHILOSOPHY ═══════════════ -->
+<section id="philosophy">
+  <div class="wrap">
+    <div class="philosophy-inner">
+      <div class="philosophy-label reveal">
+        <span class="philosophy-label-text">The Philosophy</span>
+        <span class="philosophy-label-line"></span>
+      </div>
+      <div class="philosophy-content">
+        <h2 class="philosophy-headline reveal d1">Sound arrives before understanding.</h2>
+        <p class="philosophy-text reveal d2">
+          Before a viewer reads a headline or consciously registers a visual, they've already formed an emotional response to what they heard. That response shapes everything that follows — trust, memory, desire, perception. The emotional layer is set before the rational mind has a chance to intervene. Most brands leave this entirely to chance.
+        </p>
+        <p class="philosophy-text reveal d3">
+          We believe sound is the most emotionally direct medium available to a brand. It bypasses analytical processing and lands in the part of the mind that makes real decisions. In an age of infinite visual stimulation, intentional cinematic sound creates emotional residue that lingers long after the content ends.
+        </p>
+        <blockquote class="philosophy-pull reveal d4">
+          "The brands that understand sound don't just sound better. They feel different."
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════ SERVICES ═══════════════ -->
 <section id="services">
   <div class="wrap">
@@ -1108,24 +1209,22 @@
   </div>
 </section>
 
-<!-- ═══════════════ ABOUT ═══════════════ -->
+<!-- ═══════════════ FOUNDER ═══════════════ -->
 <section id="about">
   <div class="wrap">
-    <span class="section-label reveal">The Studio</span>
+    <span class="section-label reveal">The Founder</span>
     <div class="about-grid">
-      <div class="about-img-wrap reveal d1">
-        <img src="images/brendan.jpg" alt="Brendan Foery — Founder, Foery Creative Group">
-      </div>
-      <div class="about-body reveal d2">
-        <h2 class="about-headline">Sound shapes how people <em>feel</em> about your brand.</h2>
+      <div class="about-body reveal d1">
+        <h2 class="about-headline"><em>Brendan Foery</em></h2>
+        <p class="about-text" style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-3);margin-top:-16px;margin-bottom:8px;">Creative Director &amp; Composer</p>
         <p class="about-text">
-          Brendan Foery is a composer, sonic strategist, and the founder of Foery Creative Group — a sonic branding consultancy built on a single conviction: sound is the most underutilized tool in premium brand building.
+          Brendan operates at the intersection of cinematic storytelling and brand identity. His work begins before a note is written — in the psychology of perception, the architecture of emotional response, and the specific feeling a brand needs to create in its audience.
         </p>
         <p class="about-text">
-          Before a viewer reads a headline or registers a visual, they've already formed an emotional response to what they heard. FCG exists to make that moment intentional. We work with brands who understand that perception is built in layers — and that the ones who control the sonic layer have an edge most competitors never think to pursue.
+          His background spans composition, creative direction, and sonic strategy. The through line is always the same: how does sound make people feel, and how do we make that intentional?
         </p>
         <p class="about-text">
-          Every engagement is rooted in brand strategy. Every note is a deliberate choice. We don't make music for music's sake — we build emotional systems that make brands feel larger than life.
+          FCG is the studio he built to scale that thinking across premium brands.
         </p>
         <div class="about-stats">
           <div>
@@ -1138,13 +1237,16 @@
           </div>
           <div>
             <div class="about-stat-num">0</div>
-            <div class="about-stat-label">Generic compositions — every note written for your brand</div>
+            <div class="about-stat-label">Generic compositions</div>
           </div>
           <div>
             <div class="about-stat-num">8</div>
-            <div class="about-stat-label">Cinematic sonic archetypes mapped</div>
+            <div class="about-stat-label">Sonic archetypes mapped</div>
           </div>
         </div>
+      </div>
+      <div class="about-img-wrap reveal d2">
+        <img src="images/brendan.jpg" alt="Brendan Foery — Creative Director, Foery Creative Group">
       </div>
     </div>
   </div>
@@ -1207,8 +1309,8 @@
   <div class="wrap">
     <div class="cta-inner">
       <span class="cta-eyebrow reveal">Work With Us</span>
-      <h2 class="cta-headline reveal d1">Sound is often the most <em>overlooked layer</em> of brand perception.</h2>
-      <p class="cta-sub reveal d2">FCG helps premium brands create emotional resonance that audiences feel before they understand. If your brand demands to be remembered, let's build the sound that makes that happen.</p>
+      <h2 class="cta-headline reveal d1">Most brands are seen. Very few are <em>felt.</em></h2>
+      <p class="cta-sub reveal d2">FCG creates cinematic sonic identities that leave emotional residue. If your brand demands to be remembered differently — not just seen, but felt — let's build the sound that makes that happen.</p>
       <div class="cta-actions reveal d3">
         <a href="mailto:admin@foerycreative.com" class="cta-primary">Start a Conversation</a>
         <span class="cta-email">admin@foerycreative.com</span>
