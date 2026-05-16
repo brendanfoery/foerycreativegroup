@@ -1,117 +1,138 @@
-export const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+// ================================================================
+// FCG Accounting 2026 — First Fruits Records
+//
+// TO ADD A NEW MONTH:
+//   1. Copy any month block below and paste it at the bottom.
+//   2. Update the date, vendor, amount.
+//   3. Keep type as: 'monthly' | 'annual' | 'one-time' | 'income'
+//   4. Pick a category from the CATEGORIES list below.
+// ================================================================
 
-export const monthlyRevenue  = [28500,31200,42800,38600,45200,52100,48900,41300,55700,49800,38400,62500];
-export const monthlyExpenses = [22000,18500,28000,25000,31500,35000,29000,27500,38000,32000,26000,45000];
-
-export const totalRevenue  = monthlyRevenue.reduce((a,b)=>a+b,0);   // 535,000
-export const totalExpenses = monthlyExpenses.reduce((a,b)=>a+b,0);  // 357,500
-export const netProfit     = totalRevenue - totalExpenses;           // 177,500
-export const profitMargin  = ((netProfit / totalRevenue) * 100).toFixed(1); // 33.2
-
-export const revenueBySource = {
-  'Streaming':      240750,
-  'Sync Licensing': 133750,
-  'Merchandise':    107000,
-  'Live Events':     53500,
+export const CATEGORY_COLORS = {
+  'Creative Tools':  '#f59e0b',
+  'Distribution':    '#3b82f6',
+  'Web & Hosting':   '#10b981',
+  'Business Tools':  '#8b5cf6',
+  'Equipment':       '#ef4444',
+  'Music Services':  '#f97316',
+  'E-Commerce':      '#06b6d4',
+  'Memberships':     '#84cc16',
+  'Client Work':     '#22c55e',
 };
 
-export const expensesByCategory = {
-  'Studio & Recording': 107250,
-  'Marketing & Promo':   89375,
-  'Artist Advances':    107250,
-  'Distribution Fees':   53625,
-};
+export const transactions = [
 
-export const artists = [
-  {
-    name: "Solomon's Temple",
-    genre: 'R&B / Gospel',
-    avatar: 'ST',
-    color: 'amber',
-    revenue: 178000,
-    expenses: 89000,
-    profit: 89000,
-    streams: 4200000,
-    projects: ["Lifted Up (Album)", "Higher Ground (EP)"],
-  },
-  {
-    name: 'Zion Worship Collective',
-    genre: 'Worship',
-    avatar: 'ZW',
-    color: 'blue',
-    revenue: 124000,
-    expenses: 71000,
-    profit: 53000,
-    streams: 2800000,
-    projects: ["Living Water (Album)", "Sunday Sessions (Single)"],
-  },
-  {
-    name: 'Grace Notes',
-    genre: 'Contemporary Christian',
-    avatar: 'GN',
-    color: 'green',
-    revenue: 98000,
-    expenses: 64000,
-    profit: 34000,
-    streams: 1900000,
-    projects: ["By Grace (EP)", "Unshaken (Single)"],
-  },
-  {
-    name: 'Harvest Sound',
-    genre: 'Gospel Hip-Hop',
-    avatar: 'HS',
-    color: 'purple',
-    revenue: 87000,
-    expenses: 79000,
-    profit: 8000,
-    streams: 1600000,
-    projects: ["Fields of Gold (Mixtape)"],
-  },
-  {
-    name: 'Kingdom Voices',
-    genre: 'Gospel Choir',
-    avatar: 'KV',
-    color: 'rose',
-    revenue: 48000,
-    expenses: 54500,
-    profit: -6500,
-    streams: 950000,
-    projects: ["Anthem (Album)"],
-  },
+  // ── JANUARY 2026 ───────────────────────────────────────────
+  { date:'2026-01-02', vendor:'Xero',             category:'Business Tools', type:'one-time',  amount:   1.25, note:'Trial for accounting software' },
+  { date:'2026-01-03', vendor:'DistroKid Extras', category:'Distribution',   type:'monthly',   amount:   4.95 },
+  { date:'2026-01-03', vendor:'Adobe',            category:'Creative Tools', type:'monthly',   amount:  12.83 },
+  { date:'2026-01-07', vendor:'Walgreens',         category:'Equipment',      type:'one-time',  amount: 200.00, note:'Cash for camera' },
+  { date:'2026-01-07', vendor:'Sony 35mm Lens',   category:'Equipment',      type:'one-time',  amount: 475.00 },
+  { date:'2026-01-09', vendor:'Amazon',           category:'Equipment',      type:'one-time',  amount:  28.15 },
+  { date:'2026-01-09', vendor:'Output',           category:'Creative Tools', type:'monthly',   amount:  12.99 },
+  { date:'2026-01-10', vendor:'DistroKid Extras', category:'Distribution',   type:'annual',    amount:   0.99 },
+  { date:'2026-01-15', vendor:'DistroKid',        category:'Distribution',   type:'annual',    amount: 157.99 },
+  { date:'2026-01-16', vendor:'Atansio Music',    category:'Creative Tools', type:'monthly',   amount:   6.99 },
+  { date:'2026-01-16', vendor:'Splice',           category:'Creative Tools', type:'monthly',   amount:  12.99 },
+  { date:'2026-01-17', vendor:'DistroKid Extras', category:'Distribution',   type:'monthly',   amount:  12.99 },
+  { date:'2026-01-18', vendor:'DistroKid Extras', category:'Distribution',   type:'annual',    amount:   0.99 },
+  { date:'2026-01-23', vendor:'DistroKid Extras', category:'Distribution',   type:'monthly',   amount:   5.94 },
+  { date:'2026-01-30', vendor:'Spotify',          category:'Music Services', type:'monthly',   amount:  12.99 },
+
+  // ── FEBRUARY 2026 ──────────────────────────────────────────
+  { date:'2026-02-02', vendor:'Bandzoogle',       category:'Web & Hosting',  type:'annual',    amount: 169.57, note:'BF Website Hosting + Domain' },
+  { date:'2026-02-02', vendor:'Xero',             category:'Business Tools', type:'monthly',   amount:   0.49 },
+  { date:'2026-02-03', vendor:'Adobe',            category:'Creative Tools', type:'monthly',   amount:  12.83 },
+  { date:'2026-02-09', vendor:'Output',           category:'Creative Tools', type:'monthly',   amount:  12.99 },
+  { date:'2026-02-13', vendor:'Navarr Enterprises',category:'Client Work',   type:'income',    amount: 171.94 },
+  { date:'2026-02-15', vendor:'Sqsp Domain',      category:'Web & Hosting',  type:'annual',    amount:  20.00, note:'FFR Domain' },
+  { date:'2026-02-16', vendor:'DistroKid Extras', category:'Distribution',   type:'monthly',   amount:   0.99 },
+  { date:'2026-02-16', vendor:'Splice',           category:'Creative Tools', type:'monthly',   amount:  12.99 },
+  { date:'2026-02-24', vendor:'DistroKid Extras', category:'Distribution',   type:'monthly',   amount:   5.94 },
+  { date:'2026-02-28', vendor:'Spotify',          category:'Music Services', type:'monthly',   amount:  12.99 },
+
+  // ── MARCH 2026 ─────────────────────────────────────────────
+  { date:'2026-03-03', vendor:'Adobe',            category:'Creative Tools', type:'monthly',   amount:  12.83 },
+  { date:'2026-03-09', vendor:'Output',           category:'Creative Tools', type:'monthly',   amount:  12.99 },
+  { date:'2026-03-16', vendor:'Splice',           category:'Creative Tools', type:'monthly',   amount:  12.99 },
+  { date:'2026-03-19', vendor:'DistroKid Extras', category:'Distribution',   type:'annual',    amount:   0.99 },
+  { date:'2026-03-20', vendor:'DistroKid Extras', category:'Distribution',   type:'annual',    amount:   0.99 },
+  { date:'2026-03-23', vendor:'DistroKid Extras', category:'Distribution',   type:'annual',    amount:   0.99 },
+  { date:'2026-03-25', vendor:'DistroKid Extras', category:'Distribution',   type:'monthly',   amount:  12.99 },
+  { date:'2026-03-27', vendor:'DistroKid Extras', category:'Distribution',   type:'annual',    amount:   0.99 },
+  { date:'2026-03-27', vendor:'DistroKid Extras', category:'Distribution',   type:'monthly',   amount:   5.94 },
+  { date:'2026-03-30', vendor:'Spotify',          category:'Music Services', type:'monthly',   amount:  12.99 },
+
+  // ── APRIL 2026 ─────────────────────────────────────────────
+  { date:'2026-04-03', vendor:'Adobe',            category:'Creative Tools', type:'monthly',   amount:  12.83 },
+  { date:'2026-04-04', vendor:'FastSpring',       category:'Business Tools', type:'annual',    amount:  99.00 },
+  { date:'2026-04-09', vendor:'Output',           category:'Creative Tools', type:'monthly',   amount:  12.99 },
+  { date:'2026-04-16', vendor:'DistroKid Extras', category:'Distribution',   type:'monthly',   amount:  12.00 },
+  { date:'2026-04-16', vendor:'Splice',           category:'Creative Tools', type:'monthly',   amount:  12.99 },
+  { date:'2026-04-22', vendor:'DistroKid Extras', category:'Distribution',   type:'annual',    amount:   0.99 },
+  { date:'2026-04-24', vendor:'DistroKid Extras', category:'Distribution',   type:'monthly',   amount:   5.94 },
+  { date:'2026-04-25', vendor:'Big Cartel',       category:'E-Commerce',     type:'annual',    amount: 144.00, note:'FFR Merch Hosting' },
+  { date:'2026-04-25', vendor:'Claude',           category:'Business Tools', type:'monthly',   amount:  21.66 },
+  { date:'2026-04-30', vendor:'Spotify',          category:'Music Services', type:'monthly',   amount:  12.99 },
+
+  // ── MAY 2026 ───────────────────────────────────────────────
+  { date:'2026-05-03', vendor:'Adobe',            category:'Creative Tools', type:'monthly',   amount:  12.83 },
+  { date:'2026-05-03', vendor:'Netlify',          category:'Web & Hosting',  type:'monthly',   amount:   9.68 },
+  { date:'2026-05-05', vendor:'MusiCares',        category:'Memberships',    type:'annual',    amount: 150.00, note:'Recording Academy Membership' },
+  { date:'2026-05-06', vendor:'DistroKid Extras', category:'Distribution',   type:'annual',    amount:   0.99 },
+  { date:'2026-05-09', vendor:'Bandzoogle',       category:'Web & Hosting',  type:'annual',    amount:  14.95, note:'Lanier domain' },
+  { date:'2026-05-09', vendor:'Bandzoogle',       category:'Web & Hosting',  type:'monthly',   amount:   7.53, note:'Lanier EPK Site' },
+  { date:'2026-05-09', vendor:'Output',           category:'Creative Tools', type:'monthly',   amount:  12.99 },
+  { date:'2026-05-10', vendor:'Replit',           category:'Business Tools', type:'monthly',   amount:  21.66 },
+  { date:'2026-05-13', vendor:'DistroKid',        category:'Distribution',   type:'income',    amount: 109.38 },
+
 ];
 
-export const revenueTransactions = [
-  { id:1,  date:'2025-12-18', source:'Streaming',      artist:"Solomon's Temple",        description:'Spotify Q4 Royalties',                  amount: 9420  },
-  { id:2,  date:'2025-12-12', source:'Sync Licensing', artist:'Zion Worship Collective',  description:'Netflix Documentary License',           amount:15000  },
-  { id:3,  date:'2025-12-08', source:'Merchandise',    artist:"Solomon's Temple",        description:'Holiday Merch Bundle Sales',             amount: 6800  },
-  { id:4,  date:'2025-12-01', source:'Live Events',    artist:'Grace Notes',              description:'Praise Fest 2025 — Atlanta',             amount:12500  },
-  { id:5,  date:'2025-11-28', source:'Streaming',      artist:'Harvest Sound',            description:'Apple Music November Royalties',        amount: 4200  },
-  { id:6,  date:'2025-11-20', source:'Sync Licensing', artist:"Solomon's Temple",        description:'Tyler Perry Film Placement',             amount:22000  },
-  { id:7,  date:'2025-11-15', source:'Merchandise',    artist:'Zion Worship Collective',  description:'Online Store Sales — November',         amount: 3100  },
-  { id:8,  date:'2025-11-05', source:'Streaming',      artist:'Kingdom Voices',           description:'Spotify November Royalties',            amount: 2800  },
-  { id:9,  date:'2025-10-30', source:'Live Events',    artist:'Kingdom Voices',           description:'Church Conference — Houston',           amount: 8000  },
-  { id:10, date:'2025-10-22', source:'Streaming',      artist:'Grace Notes',              description:'YouTube Music Q3 Royalties',            amount: 5600  },
-  { id:11, date:'2025-10-15', source:'Sync Licensing', artist:'Harvest Sound',            description:'Nike Ad Campaign License',              amount:18500  },
-  { id:12, date:'2025-10-08', source:'Merchandise',    artist:"Solomon's Temple",        description:'Tour Merch — Southeast Tour',            amount:11200  },
-  { id:13, date:'2025-09-25', source:'Live Events',    artist:"Solomon's Temple",        description:'Gospel Music Awards Showcase',          amount:15000  },
-  { id:14, date:'2025-09-18', source:'Streaming',      artist:'Zion Worship Collective',  description:'Tidal Q3 Royalties',                   amount: 3800  },
-  { id:15, date:'2025-09-10', source:'Sync Licensing', artist:'Grace Notes',              description:'Hallmark Channel License',              amount: 9500  },
-];
+// ── Derived totals (auto-calculated — do not edit) ──────────
 
-export const expenseTransactions = [
-  { id:1,  date:'2025-12-14', category:'Studio & Recording', artist:"Solomon's Temple",       description:'Electric Lady Studios — 2 Weeks',       amount:14000 },
-  { id:2,  date:'2025-12-10', category:'Marketing & Promo',  artist:'Zion Worship Collective', description:'Instagram / Facebook Ad Campaign',      amount: 5500 },
-  { id:3,  date:'2025-12-05', category:'Artist Advances',    artist:'Kingdom Voices',          description:'Album Recording Advance',               amount:20000 },
-  { id:4,  date:'2025-11-28', category:'Distribution Fees',  artist:'All Artists',             description:'DistroKid Annual Plan + Streaming Fees',amount: 3200 },
-  { id:5,  date:'2025-11-20', category:'Marketing & Promo',  artist:"Solomon's Temple",       description:'Pitchfork Sponsored Content',            amount: 8000 },
-  { id:6,  date:'2025-11-12', category:'Studio & Recording', artist:'Harvest Sound',           description:'Mixing & Mastering — Fields of Gold',   amount: 6500 },
-  { id:7,  date:'2025-11-05', category:'Artist Advances',    artist:'Grace Notes',             description:'Q4 Advance Payment',                    amount:12000 },
-  { id:8,  date:'2025-10-28', category:'Marketing & Promo',  artist:'Harvest Sound',           description:'Music Video Production',                amount:15000 },
-  { id:9,  date:'2025-10-20', category:'Studio & Recording', artist:'Zion Worship Collective', description:'Capitol Studios — Live Recording',      amount: 9800 },
-  { id:10, date:'2025-10-12', category:'Distribution Fees',  artist:'All Artists',             description:'Sync Licensing Platform Fees',          amount: 2800 },
-  { id:11, date:'2025-09-30', category:'Artist Advances',    artist:"Solomon's Temple",       description:'New Album Advance',                     amount:35000 },
-  { id:12, date:'2025-09-22', category:'Marketing & Promo',  artist:'Kingdom Voices',          description:'PR Agency Monthly Retainer',            amount: 4500 },
-  { id:13, date:'2025-09-15', category:'Studio & Recording', artist:'Grace Notes',             description:'Sound City Studios — EP Recording',     amount: 8200 },
-  { id:14, date:'2025-09-08', category:'Distribution Fees',  artist:'All Artists',             description:'Physical Distribution — CDs & Vinyl',   amount: 4100 },
-  { id:15, date:'2025-09-02', category:'Marketing & Promo',  artist:'Zion Worship Collective', description:'Billboard Magazine Placement',          amount: 6000 },
-];
+const _exp = transactions.filter(t => t.type !== 'income');
+const _inc = transactions.filter(t => t.type === 'income');
+
+export const totalExpenses = _exp.reduce((s,t) => s+t.amount, 0);
+export const totalIncome   = _inc.reduce((s,t) => s+t.amount, 0);
+export const netProfit     = totalIncome - totalExpenses;
+
+// Returns array of { label, monthly, annual, oneTime, income, total } per month
+export function getMonthlyBreakdown() {
+  const keys = ['2026-01','2026-02','2026-03','2026-04','2026-05'];
+  const labels = ['Jan','Feb','Mar','Apr','May'];
+  return keys.map((ym, i) => {
+    const tx = transactions.filter(t => t.date.startsWith(ym));
+    const sum = type => tx.filter(t=>t.type===type).reduce((s,t)=>s+t.amount,0);
+    const monthly = sum('monthly');
+    const annual  = sum('annual');
+    const oneTime = sum('one-time');
+    const income  = sum('income');
+    return { label: labels[i], monthly, annual, oneTime, income, total: monthly+annual+oneTime };
+  });
+}
+
+// Returns sorted array of [category, total]
+export function getCategoryTotals() {
+  const map = {};
+  _exp.forEach(t => { map[t.category] = (map[t.category]||0) + t.amount; });
+  return Object.entries(map).sort((a,b) => b[1]-a[1]);
+}
+
+// Returns sorted array of { vendor, category, total, types[] }
+export function getVendorTotals() {
+  const map = {};
+  _exp.forEach(t => {
+    if (!map[t.vendor]) map[t.vendor] = { vendor:t.vendor, category:t.category, total:0, types:new Set() };
+    map[t.vendor].total += t.amount;
+    map[t.vendor].types.add(t.type);
+  });
+  return Object.values(map)
+    .map(v => ({ ...v, types:[...v.types] }))
+    .sort((a,b) => b.total-a.total);
+}
+
+// Income transactions only
+export function getIncome() {
+  return _inc.slice().sort((a,b) => b.date.localeCompare(a.date));
+}
