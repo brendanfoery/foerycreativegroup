@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <rect width="400" height="100" fill="#FFFFFF"/>
+
+  <!-- Icon Mark: Diamond sliced layers -->
+  <polygon points="40,72 20,58 40,58 60,58" fill="#FF6B00" opacity="0.55"/>
+  <polygon points="40,56 20,42 60,42 40,56" fill="#FF6B00" opacity="0.80"/>
+  <polygon points="40,40 28,28 52,28 40,40" fill="#FF6B00"/>
+
+  <!-- Wordmark -->
+  <text x="80" y="52" font-family="'Barlow Condensed', 'Arial Narrow', 'Impact', sans-serif"
+        font-weight="900" font-size="34" letter-spacing="3" fill="#080808">FOERY</text>
+  <text x="80" y="74" font-family="'Barlow Condensed', 'Arial Narrow', sans-serif"
+        font-weight="600" font-size="12" letter-spacing="7" fill="#FF6B00">CREATIVE GROUP</text>
+</svg>
